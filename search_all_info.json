@@ -1,0 +1,108 @@
+{
+  "all_search_keyword": [
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/about/index.md",
+      "title": " 关于博主"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/back/index.md",
+      "title": " 后端教程「python, mysql, node.js」"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/back/mysql/index.md",
+      "title": " mac端 mysql安装调试"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/back/python/index.md",
+      "title": " python"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/computer/index.md",
+      "title": " zsh, Mac终端的zsh和base的区别, 操作步骤, zsh和bash的区别"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/computer/mac/homebrew.md",
+      "title": " homebrew"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/computer/pnpm/index.md",
+      "title": " 使用pnpm创建vue/react项目报错, /Users/dzl/.pnpm-store/ 是我的文件名"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/computer/uniapp/index.md",
+      "title": " uniapp项目搭建报错"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/git学习手册/index.md",
+      "title": " 常用Git命令清单, 一、新建代码库, 在当前目录新建一个Git代码库, 新建一个目录，将其初始化为Git代码库, 下载一个项目和它的整个代码历史, 二、配置, 显示当前的Git配置, 编辑Git配置文件, 设置提交代码时的用户信息, 三、增加/删除文件, 添加指定文件到暂存区, 添加指定目录到暂存区，包括子目录, 添加当前目录的所有文件到暂存区, 添加每个变化前，都会要求确认, 对于同一个文件的多处变化，可以实现分次提交, 删除工作区文件，并且将这次删除放入暂存区, 停止追踪指定文件，但该文件会保留在工作区, 改名文件，并且将这个改名放入暂存区, 四、代码提交, 提交暂存区到仓库区, 提交暂存区的指定文件到仓库区, 提交工作区自上次commit之后的变化，直接到仓库区, 提交时显示所有diff信息, 使用一次新的commit，替代上一次提交, 如果代码没有任何新变化，则用来改写上一次commit的提交信息, 重做上一次commit，并包括指定文件的新变化, 五、分支, 列出所有本地分支, 列出所有远程分支, 列出所有本地分支和远程分支, 新建一个分支，但依然停留在当前分支, 新建一个分支，并切换到该分支, 新建一个分支，指向指定commit, 新建一个分支，与指定的远程分支建立追踪关系, 切换到指定分支，并更新工作区, 切换到上一个分支, 建立追踪关系，在现有分支与指定的远程分支之间, 合并指定分支到当前分支, 选择一个commit，合并进当前分支, 删除分支, 删除远程分支, 六、标签, 列出所有tag, 新建一个tag在当前commit, 新建一个tag在指定commit, 删除本地tag, 删除远程tag, 查看tag信息, 提交指定tag, 提交所有tag, 新建一个分支，指向某个tag, 七、查看信息, 显示有变更的文件, 显示当前分支的版本历史, 显示commit历史，以及每次commit发生变更的文件, 搜索提交历史，根据关键词, 显示某个commit之后的所有变动，每个commit占据一行, 显示某个commit之后的所有变动，其\"提交说明\"必须符合搜索条件, 显示某个文件的版本历史，包括文件改名, 显示指定文件相关的每一次diff, 显示过去5次提交, 显示所有提交过的用户，按提交次数排序, 显示指定文件是什么人在什么时间修改过, 显示暂存区和工作区的差异, 显示暂存区和上一个commit的差异, 显示工作区与当前分支最新commit之间的差异, 显示两次提交之间的差异, 显示今天你写了多少行代码, 显示某次提交的元数据和内容变化, 显示某次提交发生变化的文件, 显示某次提交时，某个文件的内容, 显示当前分支的最近几次提交, 八、远程同步, 下载远程仓库的所有变动, 显示所有远程仓库, 显示某个远程仓库的信息, 增加一个新的远程仓库，并命名, 取回远程仓库的变化，并与本地分支合并, 上传本地指定分支到远程仓库, 强行推送当前分支到远程仓库，即使有冲突, 推送所有分支到远程仓库, 九、撤销, 恢复暂存区的指定文件到工作区, 恢复某个commit的指定文件到暂存区和工作区, 恢复暂存区的所有文件到工作区, 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变, 重置暂存区与工作区，与上一次commit保持一致, 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变, 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致, 重置当前HEAD为指定commit，但保持暂存区和工作区不变, 新建一个commit，用来撤销指定commit, 后者的所有变化都将被前者抵消，并且应用到当前分支, 暂时将未提交的变化移除，稍后再移入, 十、常用操作组合, 1. 修改本地分支名和远程分支名"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/messy/shell/index.md",
+      "title": " shell入门, Shell环境"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/messy/shell/shell命令.md",
+      "title": " shell 知识点, 第一个字符串索引值为0, 输出数组的第一位, 你会发现shell中的数组是从1开始的, 输出数组全部值, 输出数组第几位的长度, 注释, test.sh, 执行脚本, 结果, 执行的文件名：./test.sh, 第一个参数为：dzl, 第二个参数为：lm, 第三个参数为：123,执行脚本如下 ./test.sh \"dzl\" \"lm\" \"123\""
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/test/index.md",
+      "title": " {{ $frontmatter.title }}, 学习vite-press, Docs, More docs"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/TS教程/index.md",
+      "title": " TS入门到精通"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/css/index.md",
+      "title": " css动画汇总, css按钮过渡效果"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/es6教程笔记/index.md",
+      "title": " async 函数, 含义, 基本用法, 语法, 返回 Promise 对象, Promise 对象的状态变化, await 命令, 错误处理, 使用注意点, async 函数的实现原理, 与其他异步处理方法的比较, 实例：按顺序完成异步操作, 顶层 await"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/es6教程笔记/数组的扩展.md",
+      "title": " 数组的扩展, 扩展运算符, 含义, 替代函数的 apply 方法, 扩展运算符的应用, Array.from(), Array.of() 总是返回参数值组成的数组, 数组实例的 copyWithin(), 数组实例的 find() 和 findIndex(), 数组实例的 fill(), 数组实例的 entries()，keys() 和 values(), 数组实例的 includes(), 数组实例的 flat()，flatMap(), 数组的空位, Array.prototype.sort() 的排序稳定性"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/flexible原理解析.md",
+      "title": " flexible原理解析"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/index.md",
+      "title": " js执行顺序"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/react相关笔记/index.md",
+      "title": " react入门"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/react相关笔记/redux一篇搞懂.md",
+      "title": " redux一篇搞懂, redux的基本使用, **我们来查看state数据是如何更新的UI视图的, 如下步骤**"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/vue相关笔记/index.md",
+      "title": " vue源码工具函数, 空对象, NOOP空函数, isOn函数, isModeListener函数, extend合并对象, remove函数, hasOwn是否为自己本身拥有的属性, isArray 判断数组, isMap函数, isSet函数, isFunction函数, isObject函数, isPlainObject函数, cacheStringFunction缓存函数, 首字母大写, click -> onClick, hasChanged(判断是不是有变化),  invokeArrayFns 执行数组里的函数 , isPromise函数, 传送门  "
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/vue相关笔记/vue3语法.md",
+      "title": " vue3 小案例 "
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/webpack/index.md",
+      "title": " 深入理解 webpack 文件打包机制 "
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/前端面试题/index.md",
+      "title": " vue2/3面试题汇总"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/前端面试题/前端面试题汇总all.md",
+      "title": " 前端面试题大全 , render函数, 总结:   , 问题思考: , DP(device pixels), 分辨率, PPI(pixels per inch), DIP(device independent Pixel), dpr(device pixels ratio), 网站用的是https抓包是明文传输，为什么能看到https报文的明文？"
+    },
+    {
+      "path": "/Users/dzl/Desktop/web/vues/vite-demos/vitepress-starter/docs/web/数组操作方法.md",
+      "title": " 数组操作方法"
+    }
+  ]
+}

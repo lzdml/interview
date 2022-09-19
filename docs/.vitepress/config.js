@@ -2,9 +2,11 @@ import {
   defineConfig
 } from 'vitepress'
 
+const BASE = '/vitepress-template/'
+
 export default defineConfig({
   lang: 'zh-CN',
-  base: '/vitepress-template/',
+  base: BASE,
   appearance: true,
   title: '前端Blog',
   description: 'VitePress is a Vite-powered static site generator',
@@ -15,11 +17,6 @@ export default defineConfig({
     lineNumbers: true,
   },
   themeConfig: {
-    algolia: {
-      apiKey: '599cec31baffa4868cae4e79f180729b',
-      appId: 'R2IYF7ETH7',
-      indexName: 'vitepress-template'
-    },
     siteTitle: 'DL-Blog',
     logo: '/favicon.ico',
     footer: {
@@ -36,7 +33,7 @@ export default defineConfig({
       },
       {
         text: '前端',
-        link: '/web/前端面试题/前端面试题汇总',
+        link: '/web/前端面试题/前端面试题汇总all',
       },
       {
         text: '后端',
@@ -142,7 +139,7 @@ export default defineConfig({
           collapsible: true,
           items: [{
             text: '前端面试题汇总',
-            link: '/web/前端面试题/前端面试题汇总'
+            link: '/web/前端面试题/前端面试题汇总all'
           }]
         }
       ],
@@ -225,6 +222,12 @@ export default defineConfig({
     ['link', {
       rel: 'icon',
       href: '/vitepress-template/favicon.ico'
-    }]
+    }],
+    [
+      'script',
+      {
+        src: BASE + 'server/createDom.js'
+      }
+    ]
   ]
 })

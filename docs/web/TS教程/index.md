@@ -8,7 +8,7 @@
 ----------------
 
 ::: details 索引类型keyof
-```TypeScript
+```js
 class KeyCls {
   name: string
   age: number
@@ -28,7 +28,7 @@ getParams('sex') // 报错
 
 ::: details in
 in可以遍历枚举类型
-```TypeScript
+```js
 type Keys = 'a' | 'b'
 type Obj = {
   [p in Keys]: any;
@@ -44,7 +44,7 @@ type Obj = {
 --------------
 
 ::: details extends
-```TypeScript
+```js
 type TExtends<T, U> = T extends U ? number : never;
 type TExtendExample = TExtends<number, number | string> // number
 
@@ -58,7 +58,7 @@ type NonExample = NonNullable1<null | string, null | undefined> // string
 
 ::: details Pick
 Pick英文意思挑选, 也就是从某种类型中挑选出一个或多个属性  
-```TypeScript
+```js
 interface Todo {
   title: string
   desc: string
@@ -82,7 +82,7 @@ type MyPick<T, K extends keyof T = keyof T> = {
 -------------
 
 ::: details Readonly
-```TypeScript
+```js
 interface Todo {
   title: string
   desc: string
@@ -112,7 +112,7 @@ type myOptional<T> = {
 
 ::: details Exclude
 - 语法: Exclude<T, U>, 返回T中不存在于U的部分  
-```TypeScript
+```js
 type myExclude<T, U> = T extends U ? never : T
 
 // 测试
@@ -126,7 +126,7 @@ type excludeExample = myExclude<'a' | 'b', 'a' | 'c'> // 'b'
 
 ::: details infer
 infer可以推荐一个类型变量, 相当于声明一个类型变量, 这个变量的类型取决于传入的泛型T
-```TypeScript
+```js
 type Flatten<T> = T extends Array<infer U> ? U : T;
 
 type flattenExample1 = Flatten<string> // string
@@ -158,7 +158,7 @@ type TObjExample3 = TObj<typeof vb>
 ------------
 
 ::: details ReturnType\<T>
-```TypeScript
+```js
 type ReturnType<T> = T extends (
   ...args: any[]
 ) => infer R
@@ -181,7 +181,7 @@ type fn2Type2 = myReturnType<typeof foo> // number[]
 ::: details Partial
 将传入的属性变为可选项  
 
-```TypeScript
+```js
 
 interface Todo {
   title: string
@@ -214,7 +214,7 @@ let keyofEx1: KeyOfExample1 = {
  
 -? 将可选项代表的 ?去掉, 将该类型变成必选项, 与之对应的还有一个+?,是将可选项变成必选项
 
-```TypeScript
+```js
 
 interface Todo {
   title: string
@@ -236,7 +236,7 @@ type mutableExample = Mutable<Readonly<Todo>>
 
 ::: details Required
 Required 的作用是将传入的属性变成必选项
-```TypeScript
+```js
 type Required<T> = {
   [P in keyof T]-?: T[P]
 }
@@ -248,7 +248,7 @@ type Required<T> = {
 
 ::: details Record
 作用: 将K中所有的属性的值转化为T类型  
-```TypeScript
+```js
 type myRecord<K extends keyof any, T> = {
   [P in K]: T
 }
@@ -275,7 +275,7 @@ type IRouter = myRecord<Methods, (req: any, res: any) => void>
 
 ::: details Omit
 作用: 排除某个某些字段
-```TypeScript
+```js
 interface Todo {
   title: string
   desc: string

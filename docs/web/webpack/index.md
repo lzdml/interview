@@ -1,4 +1,4 @@
-### 深入理解 webpack 文件打包机制 
+## 深入理解 webpack 文件打包机制 
 
 - 最简单的webpack使用流程
 ```js

@@ -1,4 +1,4 @@
-## JS面试题 
+## 前端面试题大全 
 
 ::: details 1. JS中的||和&&符号
 - 相当于 or, 只要有一个为true, 就为true   
@@ -18,13 +18,14 @@ var obj = {
 
 :::  
 
+---------------
 
+::: details Http Cache / 强缓存和协商缓存
+[Http Cache / 强缓存和协商缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+:::
 
---------------
+---------------
 
-2. [Http Cache / 强缓存和协商缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
-
-------- 
 ::: details 3. js的数据类型
 es5: null, undefined, boolean, number, string  
 es6: Symbol  
@@ -32,9 +33,7 @@ es10: BigInt
 引用数据类型: (本质上是由一组无需的键值对组成) Object。包含Object、Array、 function、Date、RegExp。 JavaScript不支持创建任何自定义类型的数据，也就是说JavaScript中所有值的类型都是上面8中之一。
 :::
 
-
-
----------
+---------------
 
 
 ::: details 4. null和 undefined 的区别? 
@@ -52,9 +51,7 @@ null 代表的含义是空对象, 也作为对象原型链的终点
 null主要用于赋值给一些可能会返回对象的变量, 作为初始化  
 :::
 
-
-
-----------
+---------------
 
 ::: details 5. 数据类型存储以及堆栈内存是什么  
 基本数据类型: 直接存储在栈中, 占据空间小, 大小固定, 属于被频繁使用的数据, 如 number, string, boolean  
@@ -62,12 +59,16 @@ null主要用于赋值给一些可能会返回对象的变量, 作为初始化
 引用数据类型: 同时存储在栈内存与堆内存中, 占据空间大, 大小不固定, 如数组, 对象, 将指针存在栈中, 将值存在堆中, 当我们把对象赋值给另外一个变量时, 复制的是对象的指针, 指向同一块内存地址
 :::
 
+---------------
+
 ::: details 6. 堆「heap」和栈「stack」有什么区别存储机制  
 **栈:是一种连续存储的数据结构, 具有先进后出后进先出的规则**
 通常的操作有如栈(压栈), 出栈和栈顶元素. 想要读取栈中的某个元素, 就是将其之间的所有元素出栈才能完成。
 
 **堆: 是一种非连续的树形储存数据结构，具有队列优先,先进先出；**  每个节点有一个值，整棵树是经过排序的。特点是根结点的值最小（或最大），且根结点的两个子树也是一个堆。常用来实现优先队列，存取随意。
 :::
+
+---------------
 
 ::: details 7. 数据类型判断
 ```js {1-4}
@@ -111,6 +112,8 @@ Child instanceof Child // false
 ```
 :::
 
+---------------
+
 ::: details 8. Object.prototype.toString()
 - toString() 方法返回一个表示该对象的字符串, 每个对象都有一个 toString() 方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，toString() 方法被每个 Object 对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中 type 是对象的类型。
 
@@ -149,6 +152,7 @@ toString.call(null); // [object Null]
 ```
 :::
 
+---------------
 
 ::: details 9. 事件
 事件类型分两种：事件捕获、事件冒泡。
@@ -162,6 +166,8 @@ toString.call(null); // [object Null]
 2. 处于目标阶段  
 3. 事件冒泡阶段  
 :::
+
+---------------
 
 ::: details 10. vue生命周期
 ![生命周期图](/assets/vue/mounted.png)
@@ -187,8 +193,7 @@ render: (h, context) => h('el', {'css'}, vnodeArr)
 ```
 :::
 
--------
-
+---------------
 
 ::: details 11. 跨域原因及解决
 出现跨域的原因就是因为协议域名端口号不同导致的
@@ -201,6 +206,8 @@ render: (h, context) => h('el', {'css'}, vnodeArr)
 | http://www.test.com:8080/ | http://www.test.com:7001/ | 跨域 | 端口号不同（8080/7001）|
 
 :::
+
+---------------
 
 ::: details 12. W3C标准盒模型和IE盒模型区别
 - W3C标准盒模型:  
@@ -228,6 +235,7 @@ box-sizing: border-box;
 ```
 :::
 
+---------------
 
 ::: details 13. querySelectAll与getElementsBy系列的区别
 区别如下:  
@@ -244,6 +252,7 @@ NodeList只能通过索引来获取
 只有NodeList对象由包含属性节点和文本节点
 :::
 
+---------------
 
 ::: details 14. 判断函数是new调用还是普通调用
 ```js
@@ -268,6 +277,7 @@ let aMan = new Person() // new调用
 ```
 :::
 
+---------------
 
 ::: details 15. v-if vs v-show
 **v-if**是“真实的”按照条件渲染, 因为它确保了在切换时, 条件区块内的事件监听器和自组件都会被销毁与重建  
@@ -280,6 +290,7 @@ let aMan = new Person() // new调用
 如果需要频繁切换, 则使用 v-show比较好, 如果在运行时绑定条件很少改变, 则v-if会更合适
 :::
 
+---------------
 
 :::details 16. v-if和v-for
 当v-if和v-for同时存在于一个元素上的时候, v-if会首先被执行
@@ -297,6 +308,8 @@ let aMan = new Person() // new调用
 </template>
 ```
 :::
+
+---------------
 
 ::: details 17. 深浅拷贝
 ```js
@@ -455,8 +468,7 @@ function cloneDeep(target, map = new Map()) {
 ```
 :::
 
-----------
-
+---------------
 
 ::: details 18. 闭包
 ```js 闭包案例
@@ -510,10 +522,14 @@ console.log(bar.getName())
 
 :::
 
+---------------
+
 ::: details 19. 浏览器查看原型方案 
 1. 实例对象.__proto__
 2. ES5中的 Object.getPrototypeOf(实例对象)
 :::
+
+---------------
 
 ::: details 20. 调用new的过程发生了什么, 如何实现
 - 语法: 
@@ -563,6 +579,7 @@ console.log(student1);
 ```
 :::
 
+---------------
 
 ::: details 21. 防抖节流理解及实现  
 - 防抖  
@@ -577,6 +594,9 @@ console.log(student1);
 解释: N秒内只触发一次事件, 在N秒内重复触发只有第一次生效(类似于技能冷却)  
 
 :::
+
+
+---------------
 
 ::: details 22. 箭头函数和普通函数的区别 
 - 区别:   
@@ -631,11 +651,18 @@ stud1.doSth.call(person)() // person arrowFnPrint person
 :::
 
 
+
+---------------
+
+
 ::: details 23. event.target 和 event.currentTarget的区别  
 - event.target是当前触发事件的元素  
 - event.currentTarget是绑定事件的元素
 :::
 
+
+
+---------------
 
 ::: details 24. 原型原型链
 - 原型  
@@ -660,6 +687,8 @@ console.log(child.father); // undefined
 
 
 
+---------------
+
 ::: details 25. 微任务,宏任务,事件循环
 - 宏任务(MacroTask)种类:
 script主代码块, setTimeout, setInterval, nodejs的setImmediate, MessageChanel(react的fiber用到), postMessage, 网络I/O, 文件I/O, 用户交互的回调等事件, UI渲染事件(DOM解析, 布局计算, 绘制)
@@ -681,13 +710,19 @@ NodeJs中process.nextTick > new Promise().then回调 > MutationObserver
 :::
 
 
-::: details map和foreach的区别
+
+
+---------------
+
+
+::: details 26. map和foreach的区别
 forEach 方法会针对每一个元素执行提供函数, 该方法没有返回值, 是否会改变原数组取决于数组元素的类型是基本类型还是引用类型  
 map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值为原数组调用函数处理之后的值
 :::
 
+---------------
 
-::: details Webpack中 Loader和Plugin的区别  
+::: details 27. Webpack中 Loader和Plugin的区别  
 - Loader: 直译为"加载器", webpack将一切文件视为模块, 但是webpack原生是只能解析js文件的, 如果想将其他的文件也打包,就会用到`loader`, 所有Loader的作用是让webpack拥有了加载和解析非JS文件的能力
 
   webpack常用loader如下:
@@ -721,7 +756,10 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 
 :::
 
-::: details webpack
+
+---------------
+
+::: details 28. webpack
 
 - 构建钩子
   - entry-option: 入口操作  
@@ -744,7 +782,9 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 :::
 
 
-::: details 在地址栏中输入一个地址回车会发生哪些事情
+---------------
+
+::: details 29. 在地址栏中输入一个地址回车会发生哪些事情
 1、解析URL：首先会对 URL 进行解析，分析所需要使用的传输协议和请求的资源的路径。如果输入的 URL 中的协议或者主机名不合法，将会把地址栏中输入的内容传递给搜索引擎。如果没有问题，浏览器会检查 URL 中是否出现了非法字符，如果存在非法字符，则对非法字符进行转义后再进行下一过程。   
 
 
@@ -796,9 +836,10 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 9、TCP四次挥手： 最后一步是 TCP 断开连接的四次挥手过程。若客户端认为数据发送完成，则它需要向服务端发送连接释放请求。服务端收到连接释放请求后，会告诉应用层要释放 TCP 链接。然后会发送 ACK 包，并进入 CLOSE_WAIT 状态，此时表明客户端到服务端的连接已经释放，不再接收客户端发的数据了。但是因为 TCP 连接是双向的，所以服务端仍旧可以发送数据给客户端。服务端如果此时还有没发完的数据会继续发送，完毕后会向客户端发送连接释放请求，然后服务端便进入 LAST-ACK 状态。客户端收到释放请求后，向服务端发送确认应答，此时客户端进入 TIME-WAIT 状态。该状态会持续 2MSL（最大段生存期，指报文段在网络中生存的时间，超时会被抛弃） 时间，若该时间段内没有服务端的重发请求的话，就进入 CLOSED 状态。当服务端收到确认应答后，也便进入 CLOSED 状态。  
 :::
 
+---------------
 
 
-::: details TCP协议：如何保证页面文件能被完整送达浏览器？(TCP/IP是如何工作的)
+::: details 30. TCP协议：如何保证页面文件能被完整送达浏览器？(TCP/IP是如何工作的)
 <!-- ![UDP和TCP有什么区别](/assets/web/3.webp) -->
 
 在衡量 Web 页面性能的时候有一个重要的指标叫“**FP（First Paint）**”，是**指从页面加载到首次开始绘制的时长**。这个指标直接影响了用户的跳出率，更快的页面响应意味着更多的 PV、更高的参与度，以及更高的转化率。那什么影响 FP 指标呢？其中一个重要的因素是**网络加载速度**。
@@ -819,13 +860,15 @@ UDP中一个最重要的信息是端口号, 端口号其实就是一个数字, �
 
 UDP不能保证数据的可靠性, 但是传输速度却非常快, 所以UDP 会应用在一些关注速度、但不那么严格要求数据完整性的领域，如在线视频、互动游戏等。因此需要用到TCP, **TCP是一种面向连接的, 可靠的, 基于字节流的传输层通信协议,TCP提供重传机制,TCP引入了数据包排序机制, 保证把乱序的数据包组成了一个完整的文件, TCP执行的顺序和UDP一样, TCP额外提供了用于排序的序列号, 以便接收端通过序号来重排数据包**
 
-
-
-
-
 :::
 
-::: details 数组去重
+
+---------------
+
+
+
+
+::: details 31. 数组去重
 ```js
 let arr = [1,1,"1","1",true,true,"true",{},{},"{}",null,null,undefined,undefined]
 
@@ -871,7 +914,11 @@ console.log(uniqueFour(arr))
 ```
 :::
 
-::: details implements和extends的区别
+
+
+---------------
+
+::: details 32. implements和extends的区别
 - ts中extends和es6 class中的extends一样  
 - 可以实现类的继承 class Son extends Father {}
 - 可以实现和接口interface的继承
@@ -898,7 +945,11 @@ let b: B = {
 :::
 
 
-::: details 正向代理和反向代理
+
+---------------
+
+
+::: details 33. 正向代理和反向代理
 
 总结: 正向代理代理客户端, 反向代理代理服务器
 
@@ -932,10 +983,9 @@ let b: B = {
 :::
 
 
+---------------
 
---------------
-
-::: details HTML5新增语义化标签
+::: details 34. HTML5新增语义化标签
 - 常用布局标签
   - <header /> 头部标签 
   - <nav /> 导航标签
@@ -954,19 +1004,21 @@ let b: B = {
 :::
 
 
--------
+---------------
 
+::: details 35. CSS3新特性
 [CSS3新特性](https://zhuanlan.zhihu.com/p/434788923)
+:::
 
---------
 
+---------------
+::: details 36. cookie, session, token区别
 [cookie, session, token区别](https://www.cnblogs.com/xp1315458571/p/15001677.html)
+:::
 
---------
+---------------
 
-
-
-::: details js every和some 
+::: details 37. js every和some 
 - Array.every(callback) (不会改变原数组) 
   every()方法为数组中的每个元素执行一次callback函数, 直到找到一个会使callback返回 false的元素, 如果发现一个这样的元素, every就会立即返回false, 否则, callback为每一个元素返回true
 
@@ -1005,17 +1057,13 @@ function isBiggerThan10(element, index, array) {
 
 :::
 
+---------------
 
-----------
+38. [运行 npm run xxx 的时候发生了什么？](https://juejin.cn/post/7078924628525056007)
 
-[运行 npm run xxx 的时候发生了什么？](https://juejin.cn/post/7078924628525056007)
+---------------
 
-
------------
-
-
-
-::: details 浏览器performance性能指标
+::: details 39. 浏览器performance性能指标
 ```js
 
 let timing = window.performance && window.performance.timing
@@ -1035,8 +1083,10 @@ let active = timing.domInteractive - timing.navigationStart
 ```
 :::
 
+---------------
 
-::: details JavaScript代码执行顺序  
+
+::: details 40. JavaScript代码执行顺序  
 ```js
 Fn()
 console.log(myName)
@@ -1077,8 +1127,9 @@ myName = '哈哈哈哈'
 总结: JS代码执行总是先去进行编译阶段, 接下来进入执行阶段, 在编译阶段, 变量和函数会被放到变量环境中, 由var定义的变量会被设置为undefined; 如果在编译阶段, 存在两个相同的函数, 那么最终存放在变量环境中的是最后一个
 :::
 
+---------------
 
-::: details 浏览器堆栈垃圾回收  
+::: details 41. 浏览器堆栈垃圾回收  
 总结一  
 ------------------
 
@@ -1135,8 +1186,9 @@ V8 中会把堆分为新生代和老生代两个区域，新生代中存放的�
 1、让垃圾回收标记和 JavaScript 应用逻辑交替进行
 :::
 
+---------------
 
-::: details Promise相关
+::: details 42. Promise相关
 1、Promise 中为什么要引入微任务？  
 由于promise采用.then延时绑定回调机制，而new Promise时又需要直接执行promise中的方法，即发生了先执行方法后添加回调的过程，此时需等待then方法绑定两个回调后才能继续执行方法回调，便可将回调添加到当前js调用栈中执行结束后的任务队列中，由于宏任务较多容易堵塞，则采用了微任务
 
@@ -1148,7 +1200,9 @@ promise内部有resolved_和rejected_变量保存成功和失败的回调，进�
 :::
 
 
-:::details XSS和CSRF攻击 
+---------------
+
+:::details 43. XSS和CSRF攻击 
 - XSS全称 Cross Site Scriping, 为了与"CSS"区分, 故简称为XSS,叫做跨站脚本攻击, XSS攻击是指黑客往HTML文件中或者DOM中注入恶意脚本,从而在用户浏览页面时利用注入的恶意脚本堆用户实施攻击的一种手段
 
 当页面被注入脚本时, 浏览器无法区分这些脚本是被恶意注入的还是正常的页面内容, 所以恶意注入的脚本也拥有所有的脚本权限
@@ -1190,8 +1244,10 @@ promise内部有resolved_和rejected_变量保存成功和失败的回调，进�
 :::
 
 
+---------------
 
-::: details CSS像素、设备像素、设备独立像素、dpr、ppi 之间的区别
+
+::: details 44. CSS像素、设备像素、设备独立像素、dpr、ppi 之间的区别
 #### 问题思考: 
 iPhone 6 的分辨率是 750 x 1334 像素，然而我们我们在写 css 的时候是以 375 x 667 来调的；
 
@@ -1219,7 +1275,7 @@ iPhone 6 的分辨率是 750 x 1334 像素，然而我们我们在写 css 的时
 
 ----------
 
-```JS
+``` js
 var 斜边尺寸 = V(1920^2+1080^2) V代表开根号 
 var ppi = 斜边尺寸/5.5 
 ppi = 401ppi
@@ -1232,12 +1288,12 @@ ppi = 401ppi
 
 #### DIP(device independent Pixel)
   设备独立像素, 也称为逻辑像素, 简称dip,查看如下
-```JS
+``` js
 screen.width
 screen.height
 ```
 随着技术的进步，很小的屏幕能容纳很高的物理像素，比如1920*1080以前只能应用于大的显示器，现在可能被容纳于一个小的移动端设备中。如果我们直接使用物理像素，看如下代码：
-```CSS
+``` css
 div {
   width:200px;
   height:100px;
@@ -1253,6 +1309,8 @@ div {
 :::
 
 
+---------------
+
 
 ::: details 为什么浏览器network可以看到https传输的数据
 #### 网站用的是https抓包是明文传输，为什么能看到https报文的明文？
@@ -1265,4 +1323,9 @@ div {
 :::
 
 
+---------------
+
+
 以上所有内容答案可能存在误区, 请理性查看
+
+---------------
