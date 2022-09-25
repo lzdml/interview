@@ -41,15 +41,6 @@ let components = [];
   files = files.filter(item => item.substr(-13) !== 'docs/index.md')
 
   files.forEach(async (res) => {
-    // fs.readFile(res, function (err, data) {
-    //   if (err) throw err;
-
-    //   var lines = data.toString('utf-8').match(/^#.*\r?\n?/mg).join('\n').replace(/^#+/gm, '')
-    //   components.push({
-    //     path: res,
-    //     lines: lines
-    //   })
-    // });
     const all_title = await fs.readFileSync(res, {
       encoding: 'utf-8'
     })

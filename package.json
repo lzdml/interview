@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs --open",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "deploy": "bash deploy.sh",
@@ -24,5 +24,8 @@
     "puppeteer": "^17.1.3",
     "request": "^2.88.2",
     "typescript": "^4.7.4"
+  },
+  "bin": {
+    "git-update-pages": "app.js"
   }
 }

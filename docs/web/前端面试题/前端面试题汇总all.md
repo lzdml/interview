@@ -1323,6 +1323,74 @@ div {
 :::
 
 
+::: details 给一个数组 ["14:02", "9:00", "11:40"]求平均时间
+
+```js
+var arr = ['8:01', '9:30', '11:50']
+
+let res = 0;
+arr.forEach(el => {
+  res += new Date('2022/01/01 ' + el).getTime()
+})
+const aveNum = new Date(res / arr.length)
+console.log(`${aveNum.getHours()}:${aveNum.getMinutes()}`);
+
+```
+:::
+
+
+
+::: details Vue的Diff算法,响应式原理, MVVM/MVC简述
+![Vue的Diff算法简述](/assets/vue/diff.png)
+
+1. 当数据发生变化的时候，会触发setter，然后通过Dep类的notify方法去通知所有的订阅者Watcher，订阅者会调用patch方法。  
+
+------------- 
+
+2. patch方法会通过sameVnode方法来判断当前同层的虚拟节点是否是同一种类型的节点，如果是则调用patchVnode方法，不是则直接替换成新的节点。  
+
+-------------
+
+
+3. 如果是同一类型的节点，patchVnode会首先找到节点对应的真实DOM，然后判断新旧节点是否是指向的同一个对象，如果是则直接return。如果不是则判断文本节点是否相等，不相等则将真实DOM的文本节点改为新节点的文本内容，然后看旧节点和新节点的子节点的关系，如果旧的有新的没有，则删除真实DOM的子节点，如果信有旧没有，则将虚拟节点真实化之后，添加上去，如果二者都有子节点则执行updateChildren函数比较子节点。  
+
+-------------
+
+4. updateChildren方法的核心对比思路就是通过首尾指针的方法进行对比。  
+
+-------------
+
+**Vue的响应式原理**   
+
+vue会遍历data数据对象，使用Object.definedProperty()将每个属性都转换为getter和setter，每个Vue组件实例都有一个对应的watcher实例，在组件初次渲染的时候会记录组件用到了那些数据，当数据发生改变的时候，会触发setter方法，并通知所有依赖这个数据的watcher实例调用update方法去触发组件的compile渲染方法，进行渲染数据。
+
+-----------
+
+**MVC架构**  
+首先MVC指的是Model-View-Controller，分别代表着模型层、视图层、控制器。
+
+----------
+
+Model（模型层），主要管理的是业务模型的数据和处理数据的逻辑。  
+
+----------
+
+View（视图层）主要是接收用户的交互请求并展示数据信息给用户。  
+
+----------
+
+Controller（控制器层）主要担任的是Model和View之间的桥梁，用于控制程序的流程。Controller负责确保View可以访问到需要显示的Model对象的数据，View接收到用户的交互请求之后，会将请求转发给控制器，控制器解析请求之后，会交给对应的Model处理。
+
+
+----------
+
+
+**MVVM架构**  
+MVVM架构指的是Model-View-ViewModel，我们可以看到MVVM架构和MVC架构的区别在于有一个ViewModel部分，首先我们要知道在已经有了MVC架构的时候，为什么还要衍生出MVVM架构，这是因为View中很多控件的数据类型和Model中的属性不相同，例如Model中的时间数据可能是一串数字，View想要展示成日期的格式，这就需要一种转化，这个转换如果放在View不合适，因为View中不应该出现逻辑代码，放在Model中也不合适，这回导致Model臃肿庞大，因为这种问题的存在诞生了ViewModel，这一层可以帮助View转化为相应的数据给Model或者从Model中转化成View可以显示的内容。
+
+————————————————
+:::
+
 ---------------
 
 

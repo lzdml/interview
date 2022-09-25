@@ -1,5 +1,3 @@
-## js执行顺序
-
 ::: details JavaScript代码调用顺序分析
 ```js
 
@@ -27,4 +25,102 @@ addAll(3,6)
 所以通常情况下，栈空间都不会设置太大，主要用来存放一些原始类型的小数据。而引用类型的数据占用的空间都比较大，所以这一类数据会被存放到堆中，堆空间很大，能存放很多大的数据，不过缺点是分配内存和回收内存都会占用一定的时间。
 
 
+:::
+
+
+::: details JS 改变形参, 实参改变不改变那些事  
+```js
+function test(params) {
+  params = 3;
+}
+var x = 1;
+test(x);
+console.log(x); // 1
+
+
+
+
+function test2(params) {
+  params.name = 'aven';
+}
+
+var person = {
+  name: 'dzl',
+  age: 18
+}
+test2(person)
+
+console.log(person); // { name: 'aven', age: 18 }
+```
+
+一样的套路，但是结果不同，demo1没有改变传入的实参变量，demo2改变了传入的实参变量。
+
+差别就在于demo1中，参数为简单数据类型（null,undefined,boolean,number,string），demo2中为复杂数据类型（object，typeof([]) === 'object'）。
+:::
+
+
+
+::: details reduce 作用
+用法: // accumulator-累加器；currentValue-当前值；currentIndex-当前值索引；initialValue-初始值；
+array.reduce(function(accumulator, currentValue, currentIndex, array), initialValue)
+
+```js
+let arr1 = [1, 2, 3, 4]
+let total = arr1.reduce((acc, cur) => {
+  console.log(acc, cur);
+  // 90 1
+  // 91 2
+  // 93 3
+  // 96 4
+  // 100
+  return (acc += cur)
+}, 90)
+console.log(total); // 100
+
+
+
+// 去重
+let filterArrResult = [1,2,3,3,4,4,null,null].filter((item, index, arr) => arr.indexOf(item) === index)
+console.log(filterArrResult); // [1, 2, 3, 4, null]
+
+let filterArrResult1 = [1, 2, 2, 4, null, null].reduce((acc, cur) => {
+  return acc.includes(cur) ? acc : acc.concat(cur);
+}, []);
+console.log(filterArrResult1);
+
+
+let arr2 = [0,[1],[2, 3],[4, [5, 6, 7]]] // 数组扁平化
+let dimensionReduction = function (arr) {
+    return arr.reduce((acc, cur) => {
+        return acc.concat(
+            Array.isArray(cur) ?
+            dimensionReduction(cur) :
+            cur
+            );
+    }, []);
+}
+
+console.log(dimensionReduction(arr2));
+
+
+// 求字符串中字母出现的次数
+const str = 'sfhjasfjgfasjuwqrqadqeiqsajsdaiwqdaklldflas-cmxzmnha';
+function getCount (str) {
+  const res1 = str.split('').reduce((acc, cur) => {
+    acc[cur] ? acc[cur]++ : acc[cur] = 1
+    return acc
+  }, {})
+  return res1
+}
+console.log(getCount(str));
+console.log(getCount('abcbcc'));
+
+// 数组转对象  按照id 取出stream
+var streams = [{name: '技术', id: 1}, {name: '设计', id: 2}];
+var obj = streams.reduce((acc, cur) => {
+  acc[cur.name] = cur;
+  return acc;
+}, {})
+console.log(obj);
+```
 :::

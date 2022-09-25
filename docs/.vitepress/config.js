@@ -72,6 +72,10 @@ export default defineConfig({
               text: '数组操作方法',
               link: '/web/数组操作方法'
             },
+            {
+              text: 'js预编译详解',
+              link: '/web/js预编译'
+            }
           ]
         },
         {
@@ -93,16 +97,24 @@ export default defineConfig({
           }, ]
         },
         {
-          text: 'es6教程笔记',
+          text: 'es6-es11教程笔记',
           collapsible: true,
           collapsed: true,
           items: [{
-              text: 'async 函数',
-              link: '/web/es6教程笔记/'
+              text: 'es6笔记',
+              link: '/web/es6-es11教程笔记/'
+            },
+            {
+              text: 'es7笔记',
+              link: '/web/es6-es11教程笔记/es7笔记'
+            },
+            {
+              text: 'es8笔记',
+              link: '/web/es6-es11教程笔记/es8笔记'
             },
             {
               text: '数组的扩展',
-              link: '/web/es6教程笔记/数组的扩展'
+              link: '/web/es6-es11教程笔记/数组的扩展'
             }
           ]
         },
@@ -132,6 +144,10 @@ export default defineConfig({
               text: 'redux一篇搞懂',
               link: '/web/react相关笔记/redux一篇搞懂'
             },
+            {
+              text: 'react面试题',
+              link: '/web/react相关笔记/面试题'
+            }
           ]
         },
         {
@@ -223,11 +239,5 @@ export default defineConfig({
       rel: 'icon',
       href: '/vitepress-template/favicon.ico'
     }],
-    [
-      'script',
-      {
-        src: BASE + 'server/createDom.js'
-      }
-    ]
   ]
 })
