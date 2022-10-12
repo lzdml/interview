@@ -51,6 +51,10 @@ export default defineConfig({
         link: '/computer/',
       },
       {
+        text: '常用工具',
+        link: '/utils/'
+      },
+      {
         text: '关于',
         link: '/about/',
       }
@@ -77,6 +81,18 @@ export default defineConfig({
               link: '/web/js预编译'
             }
           ]
+        },
+        {
+          text: 'webpack入门',
+          collapsible: true,
+          collapsed: true,
+          items: [{
+            text: 'webpack案例',
+            link: '/web/webpack/'
+          }, {
+            text: 'webpack代码压缩',
+            link: '/web/webpack/webpack2代码压缩'
+          }]
         },
         {
           text: 'TypeScript教程笔记',

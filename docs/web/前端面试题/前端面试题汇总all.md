@@ -1312,7 +1312,7 @@ div {
 ---------------
 
 
-::: details 为什么浏览器network可以看到https传输的数据
+::: details 45. 为什么浏览器network可以看到https传输的数据
 #### 网站用的是https抓包是明文传输，为什么能看到https报文的明文？
 
 - https其实就是 http + SSL/TLS 两种协议的合体。http协议是应用层协议，而SSL/TLS是传输层协议。
@@ -1323,7 +1323,7 @@ div {
 :::
 
 
-::: details 给一个数组 ["14:02", "9:00", "11:40"]求平均时间
+::: details 46. 给一个数组 ["14:02", "9:00", "11:40"]求平均时间
 
 ```js
 var arr = ['8:01', '9:30', '11:50']
@@ -1340,7 +1340,7 @@ console.log(`${aveNum.getHours()}:${aveNum.getMinutes()}`);
 
 
 
-::: details Vue的Diff算法,响应式原理, MVVM/MVC简述
+::: details 47. Vue的Diff算法,响应式原理, MVVM/MVC简述
 ![Vue的Diff算法简述](/assets/vue/diff.png)
 
 1. 当数据发生变化的时候，会触发setter，然后通过Dep类的notify方法去通知所有的订阅者Watcher，订阅者会调用patch方法。  
@@ -1388,8 +1388,66 @@ Controller（控制器层）主要担任的是Model和View之间的桥梁，用�
 **MVVM架构**  
 MVVM架构指的是Model-View-ViewModel，我们可以看到MVVM架构和MVC架构的区别在于有一个ViewModel部分，首先我们要知道在已经有了MVC架构的时候，为什么还要衍生出MVVM架构，这是因为View中很多控件的数据类型和Model中的属性不相同，例如Model中的时间数据可能是一串数字，View想要展示成日期的格式，这就需要一种转化，这个转换如果放在View不合适，因为View中不应该出现逻辑代码，放在Model中也不合适，这回导致Model臃肿庞大，因为这种问题的存在诞生了ViewModel，这一层可以帮助View转化为相应的数据给Model或者从Model中转化成View可以显示的内容。
 
-————————————————
 :::
+
+::: details 48. 前端AES/md5加密
+**MD5是单向加密，无法解密**，主要用于校验。比如前端获取用户输入的密码后MD5加密，传入后端；数据库里也存的MD5字符串，后端无需解密，直接拿着这个串跟库里数据对比即可。
+
+--------------
+
+**AES是双向加密，获取密钥后可以解密**。比如前端传递加密后的用户名和电话号码给后端，后端解密后向这个电话号码发送短信。下图是AES加密使用原理
+
+```js
+let CryptoJS = require('crypto-js')
+
+const KEY = '1234567890ABCDEF1234567890ABCDEF'
+const IV = '0123456789ABCDEF'
+// 加密
+function Encrypt(str) {
+   // 密钥：一个常量，前后端协定后一个字符串即可
+  let key = CryptoJS.enc.Utf8.parse(KEY);
+  // 偏移量：一个常量，前后端协定后一个字符串，前后端一致即可
+  let iv = CryptoJS.enc.Utf8.parse(IV); 
+
+  let srcs = CryptoJS.enc.Utf8.parse(str);
+  var encrypted = CryptoJS.AES.encrypt(srcs, key, {
+    iv: iv,
+    mode: CryptoJS.mode.CBC, // mode 与后台一致。有多个模式可选
+    padding: CryptoJS.pad.Pkcs7, //
+  });
+
+  // 需要返回base64格式的加密结果，使用此句
+  return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+
+  // 需要返回hex格式的加密结果，使用此句
+  // return encrypted.ciphertext.toString().toUpperCase();
+}
+
+// 解密
+function Decrypt(str) {
+  let key = CryptoJS.enc.Utf8.parse(KEY);
+  let iv = CryptoJS.enc.Utf8.parse(IV);
+
+  let base64 = CryptoJS.enc.Base64.parse(str);
+  let src = CryptoJS.enc.Base64.stringify(base64);
+
+  var decrypt = CryptoJS.AES.decrypt(src, key, {
+    iv: iv,
+    // mode: CryptoJS.mode.ECB,
+    mode: CryptoJS.mode.CBC, // mode 与后台一致。有多个模式可选
+    padding: CryptoJS.pad.Pkcs7
+  });
+
+  var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
+  return decryptedStr.toString();
+}
+
+let jiaMi = Encrypt('dzl');
+console.log('加密', jiaMi);
+console.log('解密', Decrypt(jiaMi));
+```
+:::
+
 
 ---------------
 
