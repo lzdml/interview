@@ -83,6 +83,17 @@ export default defineConfig({
           ]
         },
         {
+          text: '浏览器相关',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              text: '前端路由模式(hash/history)',
+              link: '/web/浏览器相关/路由切换'
+            }
+          ]
+        },
+        {
           text: 'webpack入门',
           collapsible: true,
           collapsed: true,
@@ -199,6 +210,9 @@ export default defineConfig({
           items: [{
             text: 'python安装',
             link: '/back/python/'
+          },{
+            text: 'python3库语法',
+            link: '/back/python/python3库语法'
           }]
         }
       ],
