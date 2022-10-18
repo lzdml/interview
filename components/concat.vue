@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
 }
-.concat p  {
+.concat p {
   padding: 10px;
   margin: 20px;
   text-align: center;

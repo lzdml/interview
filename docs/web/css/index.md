@@ -1,15 +1,14 @@
-## css动画汇总
+## css 动画汇总
 
-::: details css毛玻璃
-- 效果图  
+::: details css 毛玻璃
+
+- 效果图
 
 ![毛玻璃](/assets/css/frosted-glass.jpg)
 
-
 - **backdrop-filter** CSS 属性可以让你为一个元素后面区域添加图形效果（如模糊或颜色偏移）。因为它适用于元素背后的所有元素，为了看到效果，必须使元素或其背景至少部分透明。
 
-- 代码如下  
-
+- 代码如下
 
 ```js
 <!DOCTYPE html>
@@ -54,7 +53,7 @@
 			  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1),
 			              0 2px 6px rgba(0, 0, 0, 0.2),
 			              0 3px 8px rgba(0, 0, 0, 0.3),
-			              0 7px 11px rgba(0, 0, 0, 0.4), 
+			              0 7px 11px rgba(0, 0, 0, 0.4),
 			              0 10px 30px rgba(0, 0, 0, 0.5);
 			}
 			.frosted-glass .title {
@@ -69,5 +68,28 @@
 		</div>
 	</body>
 </html>
+```
+
+:::
+
+<script setup>
+	import NotComp from '../../../components/CssDemo/notComp.vue'
+</script>
+
+::: details :not
+<NotComp navStatus="before" />
+
+----------------
+
+<NotComp navStatus="after" />
+
+-----------------
+
+
+- 代码如下
+```JavaScript
+li:not(:last-of-type) {
+	border-right-width: 0;
+}
 ```
 :::

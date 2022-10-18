@@ -1,14 +1,12 @@
-## 常用工具  
+## 常用工具
 
+::: details 扁平配图 unDraw
 
-::: details 扁平配图unDraw
+---
 
-----------------------
+[扁平配图 unDraw 网站](https://undraw.co/illustrations)
 
-[扁平配图unDraw网站](https://undraw.co/illustrations)  
-
-----------------------
-
+---
 
 ![cat](/assets/utils/cat.png)
 ![dog](/assets/utils/dog.png)

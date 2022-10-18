@@ -1,6 +1,5 @@
 <template>
-  <div class="js-test-container">
-  </div>
+  <div class="js-test-container"></div>
 </template>
 
 <script setup>
@@ -17,11 +16,9 @@
 // }
 
 // const random = function(n) { // 生成6位长度的字符串
-//     return (~~(Math.random() * (1 << 30))).toString(36); 
+//     return (~~(Math.random() * (1 << 30))).toString(36);
 //     // "<<"操作相当于乘上2的n次方，"~~"相当于parseInt
 // }
 </script>
 
-
-<style scoped>
-</style>
+<style scoped></style>

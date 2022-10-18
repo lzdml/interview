@@ -1,6 +1,6 @@
-# 常用Git命令清单
+# 常用 Git 命令清单
 
-一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。
+一般来说，日常使用只要记住下图 6 个命令，就可以了。但是熟练使用，恐怕要记住 60 ～ 100 个命令。
 
 ![img](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png)
 
@@ -26,7 +26,7 @@ $ git clone [url]
 
 ## 二、配置
 
-Git的设置文件为`.gitconfig`，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
+Git 的设置文件为`.gitconfig`，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
 ```bash
 # 显示当前的Git配置
@@ -296,8 +296,6 @@ $ git stash
 $ git stash pop
 ```
 
-
-
 ## 十、常用操作组合
 
 ### 1. 修改本地分支名和远程分支名
@@ -308,14 +306,10 @@ git push origin :old_branch # 删除远程旧分支（分支名前有冒号）
 git push --set-upstream origin new_branch # 推送新的分支，并设置本地分支跟踪新的远程分支
 ```
 
-
-
 **相关文章：**
 
 [《如何撤销 Git 操作？》](http://www.ruanyifeng.com/blog/2019/12/git-undo.html)
 
 [《git cherry-pick 教程》](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html) 复制某分支上的部分提交到另一个分支上（相对于可以选择指定提交的 rebase 操作）。
-
-
 
 > 命令清单来源：https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html

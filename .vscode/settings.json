@@ -1,10 +1,4 @@
 {
   "nuxt.isNuxtApp": false,
-  "cSpell.words": [
-    "instanceof",
-    "instanecof",
-    "typeof",
-    "uniapp",
-    "vitepress"
-  ]
+  "cSpell.words": ["instanceof", "instanecof", "typeof", "uniapp", "vitepress"]
 }

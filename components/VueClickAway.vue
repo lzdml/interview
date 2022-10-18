@@ -11,7 +11,7 @@
   padding: 20px 10px;
   border-radius: 10px;
   color: #fff;
-  background-image: linear-gradient(to right, #382129, #FFF2EA);
+  background-image: linear-gradient(to right, #382129, #fff2ea);
   transition: all 1s linear;
   transform-style: preserve-3d;
 }
@@ -23,5 +23,4 @@
   align-items: center;
   transform: scale(1.1) rotate(90deg);
 }
-
 </style>

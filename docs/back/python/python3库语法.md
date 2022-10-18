@@ -1,36 +1,33 @@
-## python3库语法  
-
-
-
+## python3 库语法
 
 ::: details random
-- random.randint(1, 3) 随机生成1~3的数字
 
-----------
+- random.randint(1, 3) 随机生成 1~3 的数字
 
-- random.choice()方法用于返回一个列表, 元组或字符串中的随机项    
-  print(random.choice('1234'))  随机返回1~4的字符串  
-  print(random.choice([213, '312', 'abc'])) 随机返回[213, '312', 'abc']中的一个值  
+---
 
+- random.choice()方法用于返回一个列表, 元组或字符串中的随机项  
+  print(random.choice('1234')) 随机返回 1~4 的字符串  
+  print(random.choice([213, '312', 'abc'])) 随机返回[213, '312', 'abc']中的一个值
 
------------
+---
+
 :::
 
+---
 
--------------
+::: details string 模块
 
+- string.ascii_letters 生成字符串的字母序列(也就是所有大小写字母)
+- string.ascii_lowercase 生成字符串的小写字母序列()
+- string.ascii_uppercase 生成字符串的大写字母序列
+- string.digits 生成字符串的数字序列 0123456789  
+  :::
 
-::: details string模块
-- string.ascii_letters 生成字符串的字母序列(也就是所有大小写字母)  
-- string.ascii_lowercase 生成字符串的小写字母序列()  
-- string.ascii_uppercase 生成字符串的大写字母序列  
-- string.digits 生成字符串的数字序列0123456789  
-:::
+---
 
+::: details pyautogui 模块
 
--------------
-
-::: details pyautogui模块
 ```python
 # 每个字母间隔0.1秒在鼠标聚焦的位置输入hello world
 pyautogui.typewrite('hello world\n', interval=0.1)
@@ -63,15 +60,16 @@ while True:
         n = 0
         break
 ```
+
 <!-- 效果如下 -->
+
 ![效果图](/assets/python/pydemo1.png)
 :::
 
+---
 
----------------
+::: details xlrd 模块[操作 clx 表格]
 
-
-::: details xlrd模块[操作clx表格]
 ```python
 # 引入 xlrd
 import xlrd
@@ -109,4 +107,5 @@ sheet1.row_values(x) #获取指定行，返回列表
 sheet1.col(x) #获取指定列，返回cell对象的列表
 sheet1.col_values(x) #获取指定列，返回列表
 ```
+
 :::

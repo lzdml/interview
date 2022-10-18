@@ -26,7 +26,7 @@
 
 .box::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 100%;
   height: 0;
   transition: 0.4s all ease-in-out;

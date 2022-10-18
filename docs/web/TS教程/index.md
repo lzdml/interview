@@ -1,13 +1,14 @@
-## TS入门到精通
+## TS 入门到精通
 
 ::: danger 温馨提示
 本教程来源自己总结+网上收集  
 目的为了大家更方便,更直观的理解其中的意思
 :::
 
-----------------
+---
 
-::: details 索引类型keyof
+::: details 索引类型 keyof
+
 ```js
 class KeyCls {
   name: string
@@ -21,13 +22,14 @@ getParams('name') // 正常
 getParams('age') // 正常
 getParams('sex') // 报错
 ```
+
 :::
 
-
---------------
+---
 
 ::: details in
-in可以遍历枚举类型
+in 可以遍历枚举类型
+
 ```js
 type Keys = 'a' | 'b'
 type Obj = {
@@ -39,11 +41,13 @@ type Obj = {
 //     b: any;
 // }
 ```
+
 :::
 
---------------
+---
 
 ::: details extends
+
 ```js
 type TExtends<T, U> = T extends U ? number : never;
 type TExtendExample = TExtends<number, number | string> // number
@@ -54,10 +58,12 @@ type NonNullable1<T, U> = T extends U ? never : T
 type NonExample = NonNullable1<null | string, null | undefined> // string
 
 ```
+
 :::
 
 ::: details Pick
-Pick英文意思挑选, 也就是从某种类型中挑选出一个或多个属性  
+Pick 英文意思挑选, 也就是从某种类型中挑选出一个或多个属性
+
 ```js
 interface Todo {
   title: string
@@ -70,18 +76,19 @@ type TodoPreview = Pick<Todo, 'Done'>
 //     Done: boolean;
 // }
 
-// 实现  
+// 实现
 type MyPick<T, K extends keyof T = keyof T> = {
   [P in K]: T[P]
 }
 // K in extends keyof T = keyof T, 意思是取值必须是在T的key上面取, 如果不传递取值默认为keyof T,所有的key, 内部取值是如果传递了K, 则属性就在K中任意一个
 ```
+
 :::
 
-
--------------
+---
 
 ::: details Readonly
+
 ```js
 interface Todo {
   title: string
@@ -106,12 +113,15 @@ type myOptional<T> = {
   [K in keyof T]?: T[K]
 }
 ```
+
 :::
 
-----------
+---
 
 ::: details Exclude
-- 语法: Exclude<T, U>, 返回T中不存在于U的部分  
+
+- 语法: Exclude<T, U>, 返回 T 中不存在于 U 的部分
+
 ```js
 type myExclude<T, U> = T extends U ? never : T
 
@@ -119,13 +129,14 @@ type myExclude<T, U> = T extends U ? never : T
 type excludeExample = myExclude<'a' | 'b', 'a' | 'c'> // 'b'
 // 分析: 对T也就是'a'|'b'遍历, a extends 'a'|'b', 返回never, 'b', 'a'|'b',返回'b', 所以上面的返回'b'
 ```
+
 :::
 
-
--------------
+---
 
 ::: details infer
-infer可以推荐一个类型变量, 相当于声明一个类型变量, 这个变量的类型取决于传入的泛型T
+infer 可以推荐一个类型变量, 相当于声明一个类型变量, 这个变量的类型取决于传入的泛型 T
+
 ```js
 type Flatten<T> = T extends Array<infer U> ? U : T;
 
@@ -153,11 +164,13 @@ type TObjExample3 = TObj<typeof vb>
 //     b: boolean;
 // }
 ```
+
 :::
 
-------------
+---
 
 ::: details ReturnType\<T>
+
 ```js
 type ReturnType<T> = T extends (
   ...args: any[]
@@ -172,14 +185,13 @@ function foo(x: number): Array<number> {
 
 type fn2Type2 = myReturnType<typeof foo> // number[]
 ```
+
 :::
 
-
----------------
-
+---
 
 ::: details Partial
-将传入的属性变为可选项  
+将传入的属性变为可选项
 
 ```js
 
@@ -204,14 +216,13 @@ let keyofEx1: KeyOfExample1 = {
   title: '1'
 }
 ```
+
 :::
 
-
-
--------------------
+---
 
 ::: details -? +?
- 
+
 -? 将可选项代表的 ?去掉, 将该类型变成必选项, 与之对应的还有一个+?,是将可选项变成必选项
 
 ```js
@@ -230,24 +241,27 @@ type Mutable<T> = {
 type mutableExample = Mutable<Readonly<Todo>>
 // 将Todo变成可读之后再变成可写
 ```
+
 :::
 
--------------------
+---
 
 ::: details Required
 Required 的作用是将传入的属性变成必选项
+
 ```js
 type Required<T> = {
   [P in keyof T]-?: T[P]
 }
 ```
+
 :::
 
------------------
-
+---
 
 ::: details Record
-作用: 将K中所有的属性的值转化为T类型  
+作用: 将 K 中所有的属性的值转化为 T 类型
+
 ```js
 type myRecord<K extends keyof any, T> = {
   [P in K]: T
@@ -269,12 +283,14 @@ type IRouter = myRecord<Methods, (req: any, res: any) => void>
 //     put: (req: any, res: any) => void;
 // }
 ```
+
 :::
 
------------------
+---
 
 ::: details Omit
 作用: 排除某个某些字段
+
 ```js
 interface Todo {
   title: string
@@ -283,7 +299,7 @@ interface Todo {
 }
 
 // 上面学习了Pick, 这个意思和Pick相反, 可以使用Pick+Exclude实现
-// Exclude<T, U>, 返回T中不存在于U的部分 
+// Exclude<T, U>, 返回T中不存在于U的部分
 // Pick<T, K>, 从T中挑出K
 type P<T, K> = Exclude<keyof T, K>
 type P1 = P<Todo, 'title'> // 'desc' | 'Done'
@@ -294,4 +310,5 @@ type omitExample = myOmit<Todo, 'title'>
 //     Done: boolean;
 // }
 ```
+
 :::

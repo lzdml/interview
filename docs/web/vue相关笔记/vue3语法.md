@@ -1,6 +1,7 @@
-## vue3 小案例 
+## vue3 小案例
 
 ::: details 倒计时
+
 ```js
 import { reactive, computed, toRefs } from 'vue'
 interface stateModel {
@@ -59,7 +60,7 @@ export function useCode(params?: codeParams): any {
 }
 ```
 
-``` vue
+```vue
 <template>
   <div>
     <button type="button" :disabled="isStart" @click="startDown">
@@ -69,14 +70,14 @@ export function useCode(params?: codeParams): any {
 </template>
 
 <script setup lang="ts">
-import { useCode } from './useCode';
+import { useCode } from "./useCode";
 
 const { isStart, startDown, getBtnText } = useCode({
   count: 10,
 });
-
 </script>
 
 <style scoped></style>
 ```
+
 :::

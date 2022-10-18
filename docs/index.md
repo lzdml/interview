@@ -23,10 +23,9 @@ features:
     details: python3, php, mongodb, mysql等;
   - title: 大杂烩
     icon: 🛡️
-    details: shell入门,Git, TypeScript等; 
-    link: '/messy/'
+    details: shell入门,Git, TypeScript等;
+    link: "/messy/"
 ---
-
 
 <style>
   :root {
@@ -34,6 +33,5 @@ features:
     --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
   }
 </style>
-
 
 <JsTest />
