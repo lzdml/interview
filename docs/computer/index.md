@@ -7,7 +7,11 @@
 :::
 
 ::: danger .zshrc
-.zshrc 主要用在交互 shell 中, 它会在每次打开交互 shell 时被读取, 这里可以配置一些默认的命令, 比如「alias」、「bindkey」等等
+.zshrc 主要用在交互 shell 中, 它会在每次打开交互 shell 时被读取, 在电脑每次自启时都会生效（永久有效）这里可以配置一些默认的命令, 比如「alias」、「bindkey」等等
+:::
+
+::: danger .bash_profile
+.bash_profile.bash_profile中修改的环境变量只对当前窗口有效，修改完.bash_profile之后记得在终端输入source ~/.bash_profile使之生效。
 :::
 
 ::: danger .zlogin
