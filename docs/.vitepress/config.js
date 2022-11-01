@@ -70,6 +70,10 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
+              text: '代码仓库在线地址',
+              link: '/web/online'
+            },
+            {
               text: "flexible原理解析",
               link: "/web/flexible原理解析",
             },
@@ -204,16 +208,38 @@ export default defineConfig({
           ],
         },
         {
-          text: "语义化版本",
+          text: "babel入门",
           collapsible: true,
           collapsed: true,
           items: [
             {
-              text: "版本详解",
-              link: "/web/Semanticization/",
+              text: "babel入门",
+              link: "/web/babel入门/",
             },
           ],
         },
+        {
+          text: "微信网页开发",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              text: "微信网页授权流程",
+              link: "/web/微信网页开发/",
+            },
+          ],
+        },
+        {
+          text: "明星项目评价",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              text: "vite vs turbopack",
+              link: "/web/明星项目评价/",
+            },
+          ],
+        }
       ],
       "/back/": [
         {
