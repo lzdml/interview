@@ -1,4 +1,11 @@
 {
   "nuxt.isNuxtApp": false,
-  "cSpell.words": ["instanceof", "instanecof", "typeof", "uniapp", "vitepress"]
+  "cSpell.words": [
+    "instanceof",
+    "instanecof",
+    "typeof",
+    "uniapp",
+    "vitepress"
+  ],
+  "compile-hero.disable-compile-files-on-did-save-code": false
 }

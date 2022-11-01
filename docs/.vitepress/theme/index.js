@@ -3,6 +3,7 @@ import VueClickAway from "../../../components/VueClickAway.vue";
 import JsTest from "../../../components/JsTest.vue";
 import Css from "../../../components/t-css.vue";
 import GlobalComponent from "../../../components/GlobalComponent.vue";
+import EndTime from '../../../components/EndTime.vue'
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
@@ -10,6 +11,7 @@ export default {
       .component("VueClickAway", VueClickAway)
       .component("JsTest", JsTest)
       .component("t-css", Css)
-      .component("GlobalComponent", GlobalComponent);
+      .component("GlobalComponent", GlobalComponent)
+      .component('EndTime', EndTime)
   },
 };
