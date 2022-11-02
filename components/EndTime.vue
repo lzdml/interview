@@ -2,7 +2,6 @@
   <div class="line" :style="{
     color: isRandomColor ? randomBackground : 'var(--vp-c-divider-light)'
   }">
-    <span>阅读时间:</span>
     <div class="params-item">
       <span>{{ time }}</span>
       <span>{{ mood }}</span>

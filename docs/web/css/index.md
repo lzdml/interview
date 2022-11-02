@@ -73,6 +73,7 @@
 :::
 
 <script setup>
+	import ImitationBtn from '../../../components/CssDemo/Imitation-btn.vue'
 	import NotComp from '../../../components/CssDemo/notComp.vue'
 </script>
 
@@ -91,5 +92,39 @@
 li:not(:last-of-type) {
 	border-right-width: 0;
 }
+```
+:::
+
+-----------------
+
+
+<end-time time="新增时间: 11-01 20:58" mood="never ever forget" />
+
+
+------------------
+
+::: details css拟物化/开关按钮
+<imitation-btn />
+
+```js
+<template>
+  <div>
+    <button class="btn">拟物</button>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped>
+.btn {
+  width: 100px;
+  height: 46px;
+  border-radius: 500px;
+  background: linear-gradient(#4B4B4B, #111111);
+  color: #fff;
+  box-shadow: inset 10 0 10 #171717 inset -10 0 10 #494949;
+}
+</style>
+
 ```
 :::
