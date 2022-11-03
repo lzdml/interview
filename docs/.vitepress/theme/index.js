@@ -15,3 +15,4 @@ export default {
       .component('EndTime', EndTime)
   },
 };
+

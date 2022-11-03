@@ -19,6 +19,17 @@
 //     return (~~(Math.random() * (1 << 30))).toString(36);
 //     // "<<"操作相当于乘上2的n次方，"~~"相当于parseInt
 // }
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?57edc39f7230d22fa8a105a904201503";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
