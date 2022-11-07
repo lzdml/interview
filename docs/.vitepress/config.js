@@ -19,12 +19,6 @@ export default defineConfig({
   themeConfig: {
     siteTitle: "DL-Blog",
     logo: "/favicon.ico",
-    algolia: {
-      appId: 'KT409G0UNZ',
-      apiKey: '0047c6743b891ca8780a1ff00dabd6ac',
-      indexName: 'vitepress-template',
-      placeholder: '搜索点什么'
-    },
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2012-present DL",

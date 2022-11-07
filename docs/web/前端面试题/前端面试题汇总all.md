@@ -1453,6 +1453,129 @@ console.log('解密', Decrypt(jiaMi));
 :::
 
 
+
+<end-time time="2022-11-07 20:44" mood="Vue3相关" />
+
+::: details Vue2.0和Vue3.0有什么区别?
+1. 响应式系统的重新配置, 使用**Proxy代理**替换对象Object.defineProperty()属性,使用代理的优势如下    
+
+- 监听的目标是对象本身，不需要像Object.defineProperty那样遍历每个属性，有一定的性能提升  
+- 直接添加对象属性/删除 
+- 可以直接监听对象而非属性, proxy有13中拦截方法, 不限于apply, ownKeys, deleteProperty等
+
+2. 新增composition api, 更好的逻辑重用和代码组织  
+3. 重构虚拟DOM  
+
+等等   
+:::
+
+
+::: details vue3响应式数据的判断？  
+- isRef: 检查一个值是否为一个 ref 对象 
+- isReactive: 检查一个对象是否是由 reactive 创建的响应式代理  
+- isReadonly: 检查一个对象是否是由 readonly 创建的只读代理  
+- isProxy: 检查一个对象是否是由 reactive 或者 readonly 方法创建的代理 
+:::
+
+
+------------------------ 
+
+::: details Vue3 composition api
+![Vue3 composition api](https://img-blog.csdnimg.cn/img_convert/8f74725c96df6d4ce5e98c8525ad0a75.gif)
+
+1. watch函数 
+  - 与Vue2.x中watch配置功能一致  
+  - 两个小**坑**(待验证)：
+    - 监视reactive定义的响应式数据时：oldValue无法正确获取、强制开启了深度监视（deep配置失效）。  
+    - 监视reactive定义的响应式数据中某个属性时：deep配置有效。
+
+----------------
+
+2. watchEffect函数   
+  2.1 watch的套路是：既要指明监视的属性，也要指明监视的回调。     
+  2.2 watchEffect的套路是：不用指明监视哪个属性，监视的回调中用到哪个属性，那就监视哪个属性。
+
+-----------------
+
+3.  toRef  
+- 作用: 创建一个 ref 对象，其value值指向另一个对象中的某个属性。  
+- 语法: 
+```js
+const name = toRef(person,'name')
+```
+- 使用场景: 要将响应式对象中的某个属性单独提供给外部使用时。  
+- 扩展：toRefs 与toRef功能一致，但可以批量创建多个 ref 对象，语法：toRefs(person)  
+
+
+-------------------
+
+4. shallowReactive 与 shallowRef  
+- shallowReactive：只处理对象最外层属性的响应式（浅响应式）。    
+- shallowRef：只处理基本数据类型的响应式, 不进行对象的响应式处理。  
+- 什么时候使用?
+  - 如果有一个对象数据，结构比较深, 但变化时只是外层属性变化 ===> shallowReactive。  
+  - 如果有一个对象数据，后续功能不会修改该对象中的属性，而是生新的对象来替换 ===> shallowRef 
+
+-----------------------
+
+5. readonly 与 shallowReadonly区别?   
+- readonly: 让一个响应式数据变为只读的 (深只读)   
+- shallowReadonly：让一个响应式数据变为只读的 (浅只读) 
+- 应用场景: 不希望数据被修改时。    
+
+-------------------------
+
+6. toRaw 与 markRaw  
+- toRaw:  
+  - 作用：将一个由reactive生成的响应式对象转为普通对象。  
+  - 使用场景：用于读取响应式对象对应的普通对象，对这个普通对象的所有操作，不会引起页面更新。  
+- markRaw：  
+  - 作用：标记一个对象，使其永远不会再成为响应式对象。  
+  - 应用场景:
+    - 有些值不应被设置为响应式的，例如复杂的第三方类库等。
+    - 当渲染具有不可变数据源的大列表时，跳过响应式转换可以提高性能。
+:::
+
+
+---------------------------
+
+
+::: details 组件中的data为什么是一个函数?
+- 一个组件被复用多次的话，也就会创建多个实例。本质上，这些实例用的都是同一个构造函数。
+
+- 如果data是对象的话，对象属于引用类型，会影响到所有的实例。所以为了保证组件不同的实例之间data不冲突，data必须是一个函数。
+
+:::
+
+
+::: details nextTick的实现原理是什么？
+- 在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后立即使用 nextTick 来获取更新后的 DOM。  
+- nextTick主要使用了宏任务和微任务。  
+- 根据执行环境分别尝试采用Promise、MutationObserver、setImmediate，如果以上都不行则采用setTimeout定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。  
+:::
+
+::: details m.$set() 如何解决对象新增属性不能响应的问题 ？
+- 如果目标是数组，直接使用数组的 splice 方法触发相应式；
+- 如果目标是对象，会先判读属性是否存在、对象是否是响应式，最终如果要对属性进行响应式处理，则是通过调用 defineReactive 方法进行响应式处理（ defineReactive 方法就是 Vue 在初始化对象时，给对象属性采用 Object.defineProperty 动态添加 getter 和 setter 的功能所调用的方法）
+:::
+
+::: details  虚拟Dom以及key属性的作用
+- 由于在浏览器中操作DOM是很昂贵的。频繁的操作DOM，会产生一定的性能问题。这就是虚拟Dom的产生原因。  
+- Virtual DOM本质就是用一个原生的JS对象去描述一个DOM节点。是对真实DOM的一层抽象。(也就是源码中的VNode类，它定义在src/core/vdom/vnode.js中。) . 
+- 虚拟 DOM 的实现原理主要包括以下 3 部分：
+  - 用 JavaScript 对象模拟真实 DOM 树，对真实 DOM 进行抽象；  
+  - diff 算法 — 比较两棵虚拟 DOM 树的差异；  
+  - pach 算法 — 将两个虚拟 DOM 对象的差异应用到真正的 DOM 树。  
+- key 是为 Vue 中 vnode 的唯一标记，通过这个 key，我们的 diff 操作可以更准确、更快速，更准确：因为带 key 就不是就地复用了，在 sameNode 函数a.key === b.key对比中可以避免就地复用的情况。所以会更加准确。更快速：利用 key 的唯一性生成 map 对象来获取对应节点，比遍历方式更快 
+:::
+
+::: details 你的接口请求一般放在哪个生命周期中？
+- 可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。  
+- 但是推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：
+- 能更快获取到服务端数据，减少页面loading 时间；  
+- ssr不支持 beforeMount 、mounted 钩子函数，所以放在 created 中有助于一致性；
+:::
+
 ---------------
 
 

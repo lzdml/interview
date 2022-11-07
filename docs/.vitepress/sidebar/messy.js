@@ -15,5 +15,13 @@ export default {
         },
       ],
     },
+    {
+      text: "硬件入门笔记",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        { text: '常见电阻和测试', link: '/messy/硬件工程入门/' }
+      ]
+    }
   ]
 }
