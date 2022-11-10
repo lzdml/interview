@@ -10,8 +10,8 @@ hero:
       text: Get Started
       link: /web/online
     - theme: alt
-      text: 诗词
-      link: https://du_zhao_lin.gitee.io/amazing-sentences/
+      text: 诗词(暂时关闭)
+      # link: https://du_zhao_lin.gitee.io/amazing-sentences/
 
 features:
   - icon: ⚡️

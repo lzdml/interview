@@ -93,7 +93,7 @@ var _default = {
     collapsible: true,
     collapsed: true,
     items: [{
-      text: "react工具函数汇总",
+      text: "react入门笔记",
       link: "/web/react相关笔记/"
     }, {
       text: "redux一篇搞懂",
