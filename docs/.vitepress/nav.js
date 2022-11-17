@@ -21,10 +21,10 @@ export function getNavs() {
         },
       ],
     },
-    {
-      text: "相关问题",
-      link: "/computer/",
-    },
+    // {
+    //   text: "相关问题",
+    //   link: "/computer/",
+    // },
     {
       text: "常用工具",
       link: "/utils/",
