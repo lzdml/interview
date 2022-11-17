@@ -22,8 +22,8 @@ var _default = {
       text: "数组结构及小功能",
       link: "/web/小功能"
     }, {
-      text: "js预编译详解",
-      link: "/web/js预编译"
+      text: 'js设计模式',
+      link: '/web/js设计模式'
     }]
   }, {
     text: "浏览器相关",
@@ -87,6 +87,9 @@ var _default = {
     }, {
       text: "vue3语法",
       link: "/web/vue相关笔记/vue3语法"
+    }, {
+      text: '前端开发规范',
+      link: '/web/vue相关笔记/前端开发规范'
     }]
   }, {
     text: "react相关笔记",

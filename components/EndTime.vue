@@ -29,10 +29,15 @@ defineProps({
 const colors = [
   'var(--vp-custom-block-danger-text)',
   'var(--vp-custom-block-tip-text)',
+  'var(--vp-home-hero-name-background)',
+  'var(--jjext-color-brand)',
+  'var(--jjext-color-tips)',
+  'var(--jjext-color-navbar-icon)',
+  'var(--jjext-color-font-1)'
 ]
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const randomBackground = computed(() => colors[random(0, 2)])
+const randomBackground = computed(() => colors[random(0, colors.length)])
 </script>
 
 <style scoped>
