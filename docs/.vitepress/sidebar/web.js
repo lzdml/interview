@@ -36,6 +36,10 @@ export default {
           text: "前端路由模式(hash/history)",
           link: "/web/浏览器相关/路由切换",
         },
+        {
+          text: '浏览器判断',
+          link: '/web/浏览器相关/'
+        }
       ],
     },
     {
@@ -73,6 +77,10 @@ export default {
           text: "css动画过渡相关",
           link: "/web/css/",
         },
+        {
+          text: 'css样式问题',
+          link: '/web/css/css样式问题'
+        }
       ],
     },
     {

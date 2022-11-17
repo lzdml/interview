@@ -17,6 +17,8 @@ var _GlobalComponent = _interopRequireDefault(require("../../../components/Globa
 
 var _EndTime = _interopRequireDefault(require("../../../components/EndTime.vue"));
 
+var _SlotContent = _interopRequireDefault(require("../../../components/CssDemo/SlotContent.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -28,7 +30,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var _default = _objectSpread({}, _theme["default"], {
   enhanceApp: function enhanceApp(_ref) {
     var app = _ref.app;
-    app.component("VueClickAway", _VueClickAway["default"]).component("JsTest", _JsTest["default"]).component("t-css", _tCss["default"]).component("GlobalComponent", _GlobalComponent["default"]).component('EndTime', _EndTime["default"]);
+    app.component("VueClickAway", _VueClickAway["default"]).component("JsTest", _JsTest["default"]).component("t-css", _tCss["default"]).component("GlobalComponent", _GlobalComponent["default"]).component('EndTime', _EndTime["default"]).component('SlotContent', _SlotContent["default"]);
   }
 });
 

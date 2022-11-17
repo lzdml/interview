@@ -4,6 +4,8 @@ import JsTest from "../../../components/JsTest.vue";
 import Css from "../../../components/t-css.vue";
 import GlobalComponent from "../../../components/GlobalComponent.vue";
 import EndTime from '../../../components/EndTime.vue'
+import SlotContent from '../../../components/CssDemo/SlotContent.vue'
+
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
@@ -13,6 +15,7 @@ export default {
       .component("t-css", Css)
       .component("GlobalComponent", GlobalComponent)
       .component('EndTime', EndTime)
+      .component('SlotContent', SlotContent)
   },
 };
 
