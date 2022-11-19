@@ -24,6 +24,10 @@ export default {
         {
           text: 'js设计模式',
           link: '/web/js设计模式'
+        },
+        {
+          text: '大文件上传断点续传',
+          link: '/web/大文件上传断点续传'
         }
       ],
     },
@@ -193,10 +197,10 @@ export default {
       collapsible: true,
       collapsed: true,
       items: [
-        { text: 'npm', link: '/web/Package-management/npm' },
-        { text: 'yarn', link: '/web/Package-management/yarn' },
-        { text: 'pnpm', link: '/web/Package-management/pnpm' },
-        { text: 'vscode', link: '/web/Package-management/vscode' },
+        {text: 'npm', link: '/web/Package-management/npm'},
+        {text: 'yarn', link: '/web/Package-management/yarn'},
+        {text: 'pnpm', link: '/web/Package-management/pnpm'},
+        {text: 'vscode', link: '/web/Package-management/vscode'},
       ],
     },
   ]
