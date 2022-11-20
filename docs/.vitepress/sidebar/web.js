@@ -1,6 +1,14 @@
 export default {
   "/web/": [
     {
+      text: '数据结构与算法',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {text: '栈', link: '/web/数据结构与算法/stack'},
+      ],
+    },
+    {
       text: "JavaScript教程笔记",
       collapsible: true,
       collapsed: true,
