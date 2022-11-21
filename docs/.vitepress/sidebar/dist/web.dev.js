@@ -128,12 +128,12 @@ var _default = {
       link: "/web/babel入门/"
     }]
   }, {
-    text: "微信网页开发",
+    text: "微信环境文档",
     collapsible: true,
     collapsed: true,
     items: [{
       text: "微信网页授权流程",
-      link: "/web/微信网页开发/"
+      link: "/web/微信环境文档/"
     }]
   }, {
     text: "明星项目评价",
