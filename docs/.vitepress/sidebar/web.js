@@ -6,6 +6,7 @@ export default {
       collapsed: true,
       items: [
         {text: '栈', link: '/web/数据结构与算法/stack'},
+        {text: '队列', link: '/web/数据结构与算法/queue'}
       ],
     },
     {
