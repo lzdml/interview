@@ -3,9 +3,9 @@
 ::: details 1. JS 中的||和&&符号
 
 - 相当于 or, 只要有一个为 true, 就为 true
-  - 假后真前 0(为 false,假, 取后面的值) || 2
+    - 假后真前 0(为 false,假, 取后面的值) || 2
 - && 相当于 and, 只要所有为 true, 就为 true
-  - 假前真后 0 && 1(0 为假,取&&前面的 0) // 0 1 && 2(1 为真,取&&后面的 2)
+    - 假前真后 0 && 1(0 为假,取&&前面的 0) // 0 1 && 2(1 为真,取&&后面的 2)
 
 ```js
 var obj = {
@@ -31,7 +31,8 @@ var obj = {
 es5: null, undefined, boolean, number, string  
 es6: Symbol  
 es10: BigInt  
-引用数据类型: (本质上是由一组无需的键值对组成) Object。包含 Object、Array、 function、Date、RegExp。 JavaScript 不支持创建任何自定义类型的数据，也就是说 JavaScript 中所有值的类型都是上面 8 中之一。
+引用数据类型: (本质上是由一组无需的键值对组成) Object。包含 Object、Array、 function、Date、RegExp。 JavaScript
+不支持创建任何自定义类型的数据，也就是说 JavaScript 中所有值的类型都是上面 8 中之一。
 :::
 
 ---
@@ -55,7 +56,8 @@ null 主要用于赋值给一些可能会返回对象的变量, 作为初始化
 ::: details 5. 数据类型存储以及堆栈内存是什么  
 基本数据类型: 直接存储在栈中, 占据空间小, 大小固定, 属于被频繁使用的数据, 如 number, string, boolean
 
-引用数据类型: 同时存储在栈内存与堆内存中, 占据空间大, 大小不固定, 如数组, 对象, 将指针存在栈中, 将值存在堆中, 当我们把对象赋值给另外一个变量时, 复制的是对象的指针, 指向同一块内存地址
+引用数据类型: 同时存储在栈内存与堆内存中, 占据空间大, 大小不固定, 如数组, 对象, 将指针存在栈中, 将值存在堆中,
+当我们把对象赋值给另外一个变量时, 复制的是对象的指针, 指向同一块内存地址
 :::
 
 ---
@@ -64,7 +66,8 @@ null 主要用于赋值给一些可能会返回对象的变量, 作为初始化
 **栈:是一种连续存储的数据结构, 具有先进后出后进先出的规则**
 通常的操作有如栈(压栈), 出栈和栈顶元素. 想要读取栈中的某个元素, 就是将其之间的所有元素出栈才能完成。
 
-**堆: 是一种非连续的树形储存数据结构，具有队列优先,先进先出；** 每个节点有一个值，整棵树是经过排序的。特点是根结点的值最小（或最大），且根结点的两个子树也是一个堆。常用来实现优先队列，存取随意。
+**堆: 是一种非连续的树形储存数据结构，具有队列优先,先进先出；**
+每个节点有一个值，整棵树是经过排序的。特点是根结点的值最小（或最大），且根结点的两个子树也是一个堆。常用来实现优先队列，存取随意。
 :::
 
 ---
@@ -72,10 +75,14 @@ null 主要用于赋值给一些可能会返回对象的变量, 作为初始化
 ::: details 7. 数据类型判断
 
 ```js {1-4}
-**typeof 对于基本数据类型判断是没有问题的，但是遇到引用数据类型（如：Array）是不起作用**
-**instanceof 运算符用于检测构造函数的prototype属性是否出现在某个实例对象的原型链上**
-**instanceof 只能判断引用数据类型, 而不能判断基本数据类型**
-**constructor 似乎完全可以应对基本数据类型和引用数据类型**
+**
+typeof 对于基本数据类型判断是没有问题的，但是遇到引用数据类型（如：Array）是不起作用 **
+**instanceof 运算符用于检测构造函数的prototype属性是否出现在某个实例对象的原型链上 **
+**instanceof
+只能判断引用数据类型, 而不能判断基本数据类型 **
+**
+constructor
+似乎完全可以应对基本数据类型和引用数据类型 **
 
 typeof [] // object
 Array.isArray([]) // true
@@ -84,20 +91,30 @@ typeof 10 // number
 
 typeof null // object
 
-[] instanceof Array // true
-[] instanceof Object // true
-{} instanceof Object // true
-function() {} instanceof Function // true
+  [] instanceof Array // true
+  [] instanceof Object // true
+{
+}
+instanceof
+Object // true
+function () {
+}
+
+instanceof
+Function // true
 
 
-(true).constructor === Boolean // true
-('str').constructor === String // true
-([]).constructor === Array // true
+  (true).constructor === Boolean // true
+  ('str').constructor === String // true
+  ([]).constructor === Array // true
 
 // 判断继承关系
 
-function Parent() {}
-function Child() {}
+function Parent() {
+}
+
+function Child() {
+}
 
 Child.prototype = new Parent()
 Child.prototype.constructor = Child
@@ -117,20 +134,23 @@ Child instanceof Child // false
 
 ::: details 8. Object.prototype.toString()
 
-- toString() 方法返回一个表示该对象的字符串, 每个对象都有一个 toString() 方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，toString() 方法被每个 Object 对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中 type 是对象的类型。
+- toString() 方法返回一个表示该对象的字符串, 每个对象都有一个 toString()
+  方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，toString() 方法被每个 Object
+  对象继承。如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中 type 是对象的类型。
 
 ```js
 var o = new Object()
 o.toString() // [object Object]
 
 
-toString()方法是可以被覆盖的,大多数类型的toString都被覆盖了,
+toString()
+方法是可以被覆盖的, 大多数类型的toString都被覆盖了,
 
 // eg
-function Dog(name, age) {
-  this.name = name
-  this.age = age
-}
+  function Dog(name, age) {
+    this.name = name
+    this.age = age
+  }
 
 Dog.prototype.toString = function dogToString() {
   return 'dog name:' + this.name + 'age: ' + this.age
@@ -177,21 +197,29 @@ toString.call(null); // [object Null]
 ::: details 10. vue 生命周期
 ![生命周期图](/assets/vue/mounted.png)
 
-| 生命周期      | 详细解释                                                                                    | more                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| beforeCreate  | 实例创建之后, 进行数据观测(data observer)和事件(event)                                      | 侦听器(watcher)的配置之前同步调用, data, computed, watch, methods 上面的方法和数据均不能访问             | 可以做一些 loading 展示, 骨架图展示                |
-| created       | 实例创建完成(const vm = new Vue()),数据观测(data observer 「Object.defineProperty」和 event | watcher)事件已配置, 可访问 data, computed, watch, methods 上面的方法和数据, 未挂载 dom, 不能使用 el, ref | 可以在这个周期结束骨架图, 初始化数据, 异步请求数据 |
-| beforeMount   | 在挂载开始之前调用, **render 函数**首次调用                                                 |                                                                                                          |
-| mounted       | 完成挂载 dom 和渲染, 即有了 DOM 并且完成了双向绑定, 可访问 DOM 节点, $ref                   | 可以调用 echarts 获取数据并渲染, 因为 echarts 需要一个真实的 DOM 节点                                    |
-| beforeUpdate  | 数据更新时调用, 虚拟 DOM 重新渲染和打补丁之前                                               | /                                                                                                        |
-| updated       | 虚拟 DOM 重新渲染之后, **一定不要**在这个里面操作数据, 否则会陷入死循环                     |
-| beforeDestroy | 实例销毁之前调用, 可以使用实例                                                              | 销毁定时器                                                                                               |
-| destroyed     | 实例销毁之后调用                                                                            |
-| nextTick      | 下一个 DOM 渲染完成之后立即执行                                                             |                                                                                                          |
+| 生命周期 | 详细解释 | more |
+| ------------- | ------------------------------------------------------------------------------------------- |
+-------------------------------------------------------------------------------------------------------- |
+-------------------------------------------------- |
+| beforeCreate | 实例创建之后, 进行数据观测(data observer)和事件(event)                                      | 侦听器(
+watcher)的配置之前同步调用, data, computed, watch, methods 上面的方法和数据均不能访问 | 可以做一些 loading 展示, 骨架图展示
+|
+| created | 实例创建完成(const vm = new Vue()),数据观测(data observer 「Object.defineProperty」和 event | watcher)事件已配置,
+可访问 data, computed, watch, methods 上面的方法和数据, 未挂载 dom, 不能使用 el, ref | 可以在这个周期结束骨架图, 初始化数据,
+异步请求数据 |
+| beforeMount | 在挂载开始之前调用, **render 函数**首次调用 | |
+| mounted | 完成挂载 dom 和渲染, 即有了 DOM 并且完成了双向绑定, 可访问 DOM 节点, $ref | 可以调用 echarts 获取数据并渲染,
+因为 echarts 需要一个真实的 DOM 节点 |
+| beforeUpdate | 数据更新时调用, 虚拟 DOM 重新渲染和打补丁之前 | / |
+| updated | 虚拟 DOM 重新渲染之后, **一定不要**在这个里面操作数据, 否则会陷入死循环 |
+| beforeDestroy | 实例销毁之前调用, 可以使用实例 | 销毁定时器 |
+| destroyed | 实例销毁之后调用 |
+| nextTick | 下一个 DOM 渲染完成之后立即执行 | |
 
 ### render 函数
 
-render 函数的作用是将 h 创建的 node 节点信息 return 返回给 vue.js 底层处理文件中的**beforeMount()**钩子函数, 让其 node 节点信息在界面上渲染出来
+render 函数的作用是将 h 创建的 node 节点信息 return 返回给 vue.js 底层处理文件中的**beforeMount()**钩子函数, 让其 node
+节点信息在界面上渲染出来
 
 - render 函数语法如下:
 
@@ -251,7 +279,8 @@ box-sizing: border-box;
 区别如下:
 
 1. querySelectAll 属于 W3C 中的 Selectors API 规范, 而 getElementsBy 系列属于 W3C DOM 规范
-2. querySelectAll 方法接受参数是 CSS 选择符, 当传入的不符合 CSS 选择符会抛出异常, 而 getElementBy 系列则接受的参数是单一的 className, tagName 等;
+2. querySelectAll 方法接受参数是 CSS 选择符, 当传入的不符合 CSS 选择符会抛出异常, 而 getElementBy 系列则接受的参数是单一的
+   className, tagName 等;
 3. 从返回值角度来看, querySelectAll 返回的是不变的节点列表, 而 getElementsby 系列返回的是动态的节点列表
 
 HTMLCollection 是 HTML 元素的集合  
@@ -269,15 +298,18 @@ NodeList 只能通过索引来获取
 
 ```js
 1.
+
 function Parent() {
   if (this instanceof arguments.callee) {
     console.log('new调用');
   } else {
-     console.log('普通函数调用');
+    console.log('普通函数调用');
   }
 }
 
-2. 通过constructor
+2.
+通过constructor
+
 function Person() {
   if (this.constructor === arguments.callee) {
     console.log('new调用');
@@ -285,6 +317,7 @@ function Person() {
     console.log('普通调用');
   }
 }
+
 let aMan = new Person() // new调用
 ```
 
@@ -341,7 +374,8 @@ const data = {
 - 浅拷贝
 
 ```js {1,35}
-1. Object.assign
+1.
+Object.assign
 
 let newObj = Object.assign({}, data);
 newObj.age = 30;
@@ -375,12 +409,15 @@ newObj.job.job3.key = '哈哈哈哈哈哈';
 //   }
 // }
 
-结论: Object.assign拷贝的对象的属性值只是简单类型(number, boolean, string)得到的新对象的属性值是深拷贝, 如果属性值是对象或者其他引用类型, 那么拷贝的这个属性值是浅拷贝
+结论: Object.assign拷贝的对象的属性值只是简单类型(number, boolean, string)
+得到的新对象的属性值是深拷贝, 如果属性值是对象或者其他引用类型, 那么拷贝的这个属性值是浅拷贝
 
-2. 手写浅拷贝
+2.
+手写浅拷贝
+
 function shallowClone(obj) {
   const newObj = {}
-  for(let prop in obj) {
+  for (let prop in obj) {
     if (obj.hasOwnProperty(prop)) {
       newObj[prop] = obj[prop]
     }
@@ -393,10 +430,11 @@ function shallowClone(obj) {
 
 - 深拷贝
 
-  - \_.cloneDeep()
-  - jquery.extend()
+    - \_.cloneDeep()
+    - jquery.extend()
 
-- 使用 JSON.parse(JSON.stringify(cloneObj)), 会自动忽略拷贝对象中的函数, 对日期有半支持,忽略 undefined 类型, 忽略 key 为 symbol 类型的字段,无法保持之前的原型链
+- 使用 JSON.parse(JSON.stringify(cloneObj)), 会自动忽略拷贝对象中的函数, 对日期有半支持,忽略 undefined 类型, 忽略 key 为
+  symbol 类型的字段,无法保持之前的原型链
 
 ```js
 const b = {
@@ -495,28 +533,31 @@ function outer() {
 ```js
 
 function foo() {
-    var myName = "dzl"
-    let test1 = 1
-    const test2 = 2
-    var innerBar = {
-        setName:function(newName){
-            myName = newName
-        },
-        getName:function(){
-            console.log(test1)
-            return myName
-        }
+  var myName = "dzl"
+  let test1 = 1
+  const test2 = 2
+  var innerBar = {
+    setName: function (newName) {
+      myName = newName
+    },
+    getName: function () {
+      console.log(test1)
+      return myName
     }
-    return innerBar
+  }
+  return innerBar
 }
+
 var bar = foo()
 bar.setName("lm")
 bar.getName()
 console.log(bar.getName())
 
 // 流程分析
-1. 当JavaScript引擎执行到foo函数的时候, 首先会编译, 并创建一个空的执行上下文
-2. 在编译的过程中, 遇到内部函数setName, JavaScript引擎还会对内部函数做一下词法扫描, 发现该函数内部引用了foo函数中的myName变量, 由于是内部函数引用了外部函数的变量, 所有JS判断这是一个闭包, 于是在堆空间创建了一个对象, 用来保存被闭包使用的变量,防止变量被释放
+1.
+当JavaScript引擎执行到foo函数的时候, 首先会编译, 并创建一个空的执行上下文
+2.
+在编译的过程中, 遇到内部函数setName, JavaScript引擎还会对内部函数做一下词法扫描, 发现该函数内部引用了foo函数中的myName变量, 由于是内部函数引用了外部函数的变量, 所有JS判断这是一个闭包, 于是在堆空间创建了一个对象, 用来保存被闭包使用的变量, 防止变量被释放
 ```
 
 作用:
@@ -554,10 +595,10 @@ new constructor((arguments))
 
 - 描述:
 
-  1. 创建一个空的简单 JavaScript 对象 (即{})
-  2. 为空对象添加属性 「**proto**」, 将该属性链接至构造函数的原型对象
-  3. 将创建的对象作为 this 的上下文
-  4. 如果该函数没有返回对象, 则返回 this
+    1. 创建一个空的简单 JavaScript 对象 (即{})
+    2. 为空对象添加属性 「**proto**」, 将该属性链接至构造函数的原型对象
+    3. 将创建的对象作为 this 的上下文
+    4. 如果该函数没有返回对象, 则返回 this
 
 - 开始实现一个 new
 
@@ -604,10 +645,10 @@ console.log(student1);
   解释: 在一定时间间隔 N 秒后才执行该事件, 在 N 秒内重复触发该事件则重新计时  
   解决的问题是 频繁的触发事件带来的高消耗性能问题, 比如以下场景
 
-  1. 输入框的 input 事件
-  2. 浏览器窗口的 resize 事件
-  3. 页面滚动 scroll 事件
-  4. pc 端 onmousemove 频繁移动事件
+    1. 输入框的 input 事件
+    2. 浏览器窗口的 resize 事件
+    3. 页面滚动 scroll 事件
+    4. pc 端 onmousemove 频繁移动事件
 
 - 节流  
   解释: N 秒内只触发一次事件, 在 N 秒内重复触发只有第一次生效(类似于技能冷却)
@@ -627,7 +668,8 @@ console.log(student1);
 5. 形参名称不能重复
 
 - 如何判断箭头函数的 this 指向  
-  箭头函数没有自己的 this 绑定, 所以必须通过作用域链来决定 this, 如果箭头函数被非箭头函数包含, 则 this 绑定的是最近一层的 this, 否则 this 绑定的则是全局的对象
+  箭头函数没有自己的 this 绑定, 所以必须通过作用域链来决定 this, 如果箭头函数被非箭头函数包含, 则 this 绑定的是最近一层的
+  this, 否则 this 绑定的则是全局的对象
 
 ```js
 var name4 = "哈哈哈哈";
@@ -685,17 +727,20 @@ stud1.doSth.call(person)(); // person arrowFnPrint person
 
 - 原型
 
-  1. 所有**引用类型**都有一个 ****proto****(隐式原型)属性, 属性值是一个普通的对象
-  2. 所有**函数**都有一个**prototype(原型)**属性, 属性值是一个普通对象
-  3. 所有**引用类型的**proto****属性指向它构造函数*\*\*prototype*
+    1. 所有**引用类型**都有一个 ****proto****(隐式原型)属性, 属性值是一个普通的对象
+    2. 所有**函数**都有一个**prototype(原型)**属性, 属性值是一个普通对象
+    3. 所有**引用类型的**proto****属性指向它构造函数*\*\*prototype*
 
 - 原型链  
-  当访问一个对象的某个属性时, 会先在这个对象本身属性上查找, 如果没有找到, 则会去它的****proto****隐式原型上查找, 即它的构造函数的 prototype, 如果还没有找到就会再去构造函数的 prototype 的**proto**中查找, 这样一层一层的向上查找就会形成一个链式结构, 叫做原型链
+  当访问一个对象的某个属性时, 会先在这个对象本身属性上查找, 如果没有找到, 则会去它的****proto****隐式原型上查找,
+  即它的构造函数的 prototype, 如果还没有找到就会再去构造函数的 prototype 的**proto**中查找, 这样一层一层的向上查找就会形成一个链式结构,
+  叫做原型链
 
 ```js
 function Parent(month) {
   this.month = month;
 }
+
 var child = new Parent("Ann");
 console.log(child.month); // Ann
 console.log(child.father); // undefined
@@ -709,9 +754,11 @@ console.log(child.father); // undefined
 ::: details 25. 微任务,宏任务,事件循环
 
 - 宏任务(MacroTask)种类:
-  script 主代码块, setTimeout, setInterval, nodejs 的 setImmediate, MessageChanel(react 的 fiber 用到), postMessage, 网络 I/O, 文件 I/O, 用户交互的回调等事件, UI 渲染事件(DOM 解析, 布局计算, 绘制)
+  script 主代码块, setTimeout, setInterval, nodejs 的 setImmediate, MessageChanel(react 的 fiber 用到), postMessage, 网络
+  I/O, 文件 I/O, 用户交互的回调等事件, UI 渲染事件(DOM 解析, 布局计算, 绘制)
 - 微任务(MicroTask)种类:  
-  浏览器端: new Promise().then 回调, MutationObserver, 监听 DOM 节点的变化 MutationObserver 使用异步+微任务的方式, Object.observer(废弃), Node.js 端: process.nextTick, new Promise().then 回调
+  浏览器端: new Promise().then 回调, MutationObserver, 监听 DOM 节点的变化 MutationObserver 使用异步+微任务的方式,
+  Object.observer(废弃), Node.js 端: process.nextTick, new Promise().then 回调
 
   2): 优先级如下:  
   NodeJs 中 process.nextTick > new Promise().then 回调 > MutationObserver
@@ -720,9 +767,10 @@ console.log(child.father); // undefined
 
 - 浏览器事件循环
   浏览器可以理解成只有一个宏任务和一个微任务队列,  
-   先执行全局的 script 代码, 执行完同步代码调用栈清空,  
-   从微任务队列中依次取出所有的任务放入调用栈执行, 如果在微任务执行的时候又出现了微任务需要把微任务放到队列末端, 微任务清空后,  
-   从宏任务队列中只取位于队首的任务放入调用栈中执行, 然后继续执行微任务队列中的所有的任务, 再去宏任务取一个, 以此构成了事件循环
+  先执行全局的 script 代码, 执行完同步代码调用栈清空,  
+  从微任务队列中依次取出所有的任务放入调用栈执行, 如果在微任务执行的时候又出现了微任务需要把微任务放到队列末端,
+  微任务清空后,  
+  从宏任务队列中只取位于队首的任务放入调用栈中执行, 然后继续执行微任务队列中的所有的任务, 再去宏任务取一个, 以此构成了事件循环
   :::
 
 ---
@@ -736,11 +784,12 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 
 ::: details 27. Webpack 中 Loader 和 Plugin 的区别
 
-- Loader: 直译为"加载器", webpack 将一切文件视为模块, 但是 webpack 原生是只能解析 js 文件的, 如果想将其他的文件也打包,就会用到`loader`, 所有 Loader 的作用是让 webpack 拥有了加载和解析非 JS 文件的能力
+- Loader: 直译为"加载器", webpack 将一切文件视为模块, 但是 webpack 原生是只能解析 js 文件的,
+  如果想将其他的文件也打包,就会用到`loader`, 所有 Loader 的作用是让 webpack 拥有了加载和解析非 JS 文件的能力
 
   webpack 常用 loader 如下:
 
-  - 样式: css-loader, style-loader, less-loader, sass-loader 等;
+    - 样式: css-loader, style-loader, less-loader, sass-loader 等;
 
   ```js
   module.exports = {
@@ -766,11 +815,13 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
   };
   ```
 
-  - 文件: raw-loader, file-loader, url-loader, 可以处理资源,file-loader 可以复制和放置资源位置, 并且可以指定文件名模版, 用 hash 命名更好利用缓存, url-loader 可以将小于配置 limit 大小的文件转换成内敛 Data Url 的方式, 减小请求
-  - 编译: babel-loader, ts-loader 等
-  - 校验测试: mocha-loader, eslint-loader 等
+    - 文件: raw-loader, file-loader, url-loader, 可以处理资源,file-loader 可以复制和放置资源位置, 并且可以指定文件名模版,
+      用 hash 命名更好利用缓存, url-loader 可以将小于配置 limit 大小的文件转换成内敛 Data Url 的方式, 减小请求
+    - 编译: babel-loader, ts-loader 等
+    - 校验测试: mocha-loader, eslint-loader 等
 
-- Plugin: 直译为 "插件", Plugin 可以扩展 webpack 的功能, 让 wbepack 具有更多灵活性, 在 webpack 运行的生命周期中会广播出许多事件, Plugin 可以监听这些事件, 在合适的时机通过 webpack 提供的 API 改变输出结果
+- Plugin: 直译为 "插件", Plugin 可以扩展 webpack 的功能, 让 wbepack 具有更多灵活性, 在 webpack 运行的生命周期中会广播出许多事件,
+  Plugin 可以监听这些事件, 在合适的时机通过 webpack 提供的 API 改变输出结果
 
 :::
 
@@ -780,31 +831,33 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 
 - 构建钩子
 
-  - entry-option: 入口操作
-  - compile: 编译
-  - make: 分析模块的依赖
-  - build-module: 构建模块, 调用 loader 处理
-  - normal-build-loader: acorn 编译构建后的 module 生成 ast 树
-  - program: 处理生成的 ast 后面的依赖收集
-  - seal: 封装模块
-  - emit: 生成文件
+    - entry-option: 入口操作
+    - compile: 编译
+    - make: 分析模块的依赖
+    - build-module: 构建模块, 调用 loader 处理
+    - normal-build-loader: acorn 编译构建后的 module 生成 ast 树
+    - program: 处理生成的 ast 后面的依赖收集
+    - seal: 封装模块
+    - emit: 生成文件
 
 - 配置:
-  1. entry(入口), 意思是 webpack 从哪个文件开始打包
-  2. output(输出), webpack 打包之后的文件输出到哪个地方, 如何命名
-  3. loader(加载器)
-  4. plugins(插件), 扩展 webpack 功能
-  5. mode 模式
-
+    1. entry(入口), 意思是 webpack 从哪个文件开始打包
+    2. output(输出), webpack 打包之后的文件输出到哪个地方, 如何命名
+    3. loader(加载器)
+    4. plugins(插件), 扩展 webpack 功能
+    5. mode 模式
 
       - 开发模式: 仅能编译JS中的ES Module 语法
       - 生产模式: 能编译JS中的ES Module 语法, 还能压缩JS代码
-  :::
+
+:::
 
 ---
 
 ::: details 29. 在地址栏中输入一个地址回车会发生哪些事情
-1、解析 URL：首先会对 URL 进行解析，分析所需要使用的传输协议和请求的资源的路径。如果输入的 URL 中的协议或者主机名不合法，将会把地址栏中输入的内容传递给搜索引擎。如果没有问题，浏览器会检查 URL 中是否出现了非法字符，如果存在非法字符，则对非法字符进行转义后再进行下一过程。
+1、解析 URL：首先会对 URL 进行解析，分析所需要使用的传输协议和请求的资源的路径。如果输入的 URL
+中的协议或者主机名不合法，将会把地址栏中输入的内容传递给搜索引擎。如果没有问题，浏览器会检查 URL
+中是否出现了非法字符，如果存在非法字符，则对非法字符进行转义后再进行下一过程。
 
 ---
 
@@ -812,31 +865,54 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 
 ---
 
-3、DNS 解析： 下一步首先需要获取的是输入的 URL 中的域名的 IP 地址，首先会判断本地是否有该域名的 IP 地址的缓存，如果有则使用，如果没有则向本地 DNS 服务器发起请求。本地 DNS 服务器也会先检查是否存在缓存，如果没有就会先向根域名服务器发起请求，获得负责的顶级域名服务器的地址后，再向顶级域名服务器请求，然后获得负责的权威域名服务器的地址后，再向权威域名服务器发起请求，最终获得域名的 IP 地址后，本地 DNS 服务器再将这个 IP 地址返回给请求的用户。用户向本地 DNS 服务器发起请求属于递归请求，本地 DNS 服务器向各级域名服务器发起请求属于迭代请求。
+3、DNS 解析： 下一步首先需要获取的是输入的 URL 中的域名的 IP 地址，首先会判断本地是否有该域名的 IP 地址的缓存，如果有则使用，如果没有则向本地
+DNS 服务器发起请求。本地 DNS
+服务器也会先检查是否存在缓存，如果没有就会先向根域名服务器发起请求，获得负责的顶级域名服务器的地址后，再向顶级域名服务器请求，然后获得负责的权威域名服务器的地址后，再向权威域名服务器发起请求，最终获得域名的
+IP 地址后，本地 DNS 服务器再将这个 IP 地址返回给请求的用户。用户向本地 DNS 服务器发起请求属于递归请求，本地 DNS
+服务器向各级域名服务器发起请求属于迭代请求。
 
 ---
 
-4、获取 MAC 地址： 当浏览器得到 IP 地址后，数据传输还需要知道目的主机 MAC 地址，因为应用层下发数据给传输层，TCP 协议会指定源端口号和目的端口号，然后下发给网络层。网络层会将本机地址作为源地址，获取的 IP 地址作为目的地址。然后将下发给数据链路层，数据链路层的发送需要加入通信双方的 MAC 地址，本机的 MAC 地址作为源 MAC 地址，目的 MAC 地址需要分情况处理。通过将 IP 地址与本机的子网掩码相与，可以判断是否与请求主机在同一个子网里，如果在同一个子网里，可以使用 APR 协议获取到目的主机的 MAC 地址，如果不在一个子网里，那么请求应该转发给网关，由它代为转发，此时同样可以通过 ARP 协议来获取网关的 MAC 地址，此时目的主机的 MAC 地址应该为网关的地址。
+4、获取 MAC 地址： 当浏览器得到 IP 地址后，数据传输还需要知道目的主机 MAC 地址，因为应用层下发数据给传输层，TCP
+协议会指定源端口号和目的端口号，然后下发给网络层。网络层会将本机地址作为源地址，获取的 IP
+地址作为目的地址。然后将下发给数据链路层，数据链路层的发送需要加入通信双方的 MAC 地址，本机的 MAC 地址作为源 MAC 地址，目的
+MAC 地址需要分情况处理。通过将 IP 地址与本机的子网掩码相与，可以判断是否与请求主机在同一个子网里，如果在同一个子网里，可以使用
+APR 协议获取到目的主机的 MAC 地址，如果不在一个子网里，那么请求应该转发给网关，由它代为转发，此时同样可以通过 ARP 协议来获取网关的
+MAC 地址，此时目的主机的 MAC 地址应该为网关的地址。
 
 ---
 
-5、TCP 三次握手： 下面是 TCP 建立连接的三次握手的过程，首先客户端向服务器发送一个 SYN 连接请求报文段和一个随机序号，服务端接收到请求后向客户端发送一个 SYN ACK 报文段，确认连接请求，并且也向客户端发送一个随机序号。客户端接收服务器的确认应答后，进入连接建立的状态，同时向服务器也发送一个 ACK 确认报文段，服务器端接收到确认后，也进入连接建立状态，此时双方的连接就建立起来了。
+5、TCP 三次握手： 下面是 TCP 建立连接的三次握手的过程，首先客户端向服务器发送一个 SYN 连接请求报文段和一个随机序号，服务端接收到请求后向客户端发送一个
+SYN ACK 报文段，确认连接请求，并且也向客户端发送一个随机序号。客户端接收服务器的确认应答后，进入连接建立的状态，同时向服务器也发送一个
+ACK 确认报文段，服务器端接收到确认后，也进入连接建立状态，此时双方的连接就建立起来了。
 
 ---
 
-6、HTTPS 握手： 如果使用的是 HTTPS 协议，在通信前还存在 TLS 的一个四次握手的过程。首先由客户端向服务器端发送使用的协议的版本号、一个随机数和可以使用的加密方法。服务器端收到后，确认加密的方法，也向客户端发送一个随机数和自己的数字证书。客户端收到后，首先检查数字证书是否有效，如果有效，则再生成一个随机数，并使用证书中的公钥对随机数加密，然后发送给服务器端，并且还会提供一个前面所有内容的 hash 值供服务器端检验。服务器端接收后，使用自己的私钥对数据解密，同时向客户端发送一个前面所有内容的 hash 值供客户端检验。这个时候双方都有了三个随机数，按照之前所约定的加密方法，使用这三个随机数生成一把秘钥，以后双方通信前，就使用这个秘钥对数据进行加密后再传输。
+6、HTTPS 握手： 如果使用的是 HTTPS 协议，在通信前还存在 TLS
+的一个四次握手的过程。首先由客户端向服务器端发送使用的协议的版本号、一个随机数和可以使用的加密方法。服务器端收到后，确认加密的方法，也向客户端发送一个随机数和自己的数字证书。客户端收到后，首先检查数字证书是否有效，如果有效，则再生成一个随机数，并使用证书中的公钥对随机数加密，然后发送给服务器端，并且还会提供一个前面所有内容的
+hash 值供服务器端检验。服务器端接收后，使用自己的私钥对数据解密，同时向客户端发送一个前面所有内容的 hash
+值供客户端检验。这个时候双方都有了三个随机数，按照之前所约定的加密方法，使用这三个随机数生成一把秘钥，以后双方通信前，就使用这个秘钥对数据进行加密后再传输。
 
 ---
 
-7、返回数据： 当页面请求发送到服务器端后，服务器端会返回一个 html 文件作为响应，浏览器接收到响应后，开始对 html 文件进行解析，开始页面的渲染过程。
+7、返回数据： 当页面请求发送到服务器端后，服务器端会返回一个 html 文件作为响应，浏览器接收到响应后，开始对 html
+文件进行解析，开始页面的渲染过程。
 
 ---
 
-8、页面渲染： 浏览器首先会根据 html 文件构建 DOM 树，根据解析到的 css 文件构建 CSSOM 树，如果遇到 script 标签，则判端是否含有 defer 或者 async 属性，要不然 script 的加载和执行会造成页面的渲染的阻塞。当 DOM 树和 CSSOM 树建立好后，根据它们来构建渲染树。渲染树构建好后，会根据渲染树来进行布局。布局完成后，最后使用浏览器的 UI 接口对页面进行绘制。这个时候整个页面就显示出来了。
+8、页面渲染： 浏览器首先会根据 html 文件构建 DOM 树，根据解析到的 css 文件构建 CSSOM 树，如果遇到 script 标签，则判端是否含有
+defer 或者 async 属性，要不然 script 的加载和执行会造成页面的渲染的阻塞。当 DOM 树和 CSSOM
+树建立好后，根据它们来构建渲染树。渲染树构建好后，会根据渲染树来进行布局。布局完成后，最后使用浏览器的 UI
+接口对页面进行绘制。这个时候整个页面就显示出来了。
 
 ---
 
-9、TCP 四次挥手： 最后一步是 TCP 断开连接的四次挥手过程。若客户端认为数据发送完成，则它需要向服务端发送连接释放请求。服务端收到连接释放请求后，会告诉应用层要释放 TCP 链接。然后会发送 ACK 包，并进入 CLOSE_WAIT 状态，此时表明客户端到服务端的连接已经释放，不再接收客户端发的数据了。但是因为 TCP 连接是双向的，所以服务端仍旧可以发送数据给客户端。服务端如果此时还有没发完的数据会继续发送，完毕后会向客户端发送连接释放请求，然后服务端便进入 LAST-ACK 状态。客户端收到释放请求后，向服务端发送确认应答，此时客户端进入 TIME-WAIT 状态。该状态会持续 2MSL（最大段生存期，指报文段在网络中生存的时间，超时会被抛弃） 时间，若该时间段内没有服务端的重发请求的话，就进入 CLOSED 状态。当服务端收到确认应答后，也便进入 CLOSED 状态。  
+9、TCP 四次挥手： 最后一步是 TCP 断开连接的四次挥手过程。若客户端认为数据发送完成，则它需要向服务端发送连接释放请求。服务端收到连接释放请求后，会告诉应用层要释放
+TCP 链接。然后会发送 ACK 包，并进入 CLOSE_WAIT 状态，此时表明客户端到服务端的连接已经释放，不再接收客户端发的数据了。但是因为
+TCP 连接是双向的，所以服务端仍旧可以发送数据给客户端。服务端如果此时还有没发完的数据会继续发送，完毕后会向客户端发送连接释放请求，然后服务端便进入
+LAST-ACK 状态。客户端收到释放请求后，向服务端发送确认应答，此时客户端进入 TIME-WAIT 状态。该状态会持续
+2MSL（最大段生存期，指报文段在网络中生存的时间，超时会被抛弃） 时间，若该时间段内没有服务端的重发请求的话，就进入 CLOSED
+状态。当服务端收到确认应答后，也便进入 CLOSED 状态。  
 :::
 
 ---
@@ -845,24 +921,38 @@ map 方法不会改变原数组的值, 返回一个新数组, 新数组中的值
 
 <!-- ![UDP和TCP有什么区别](/assets/web/3.webp) -->
 
-在衡量 Web 页面性能的时候有一个重要的指标叫“**FP（First Paint）**”，是**指从页面加载到首次开始绘制的时长**。这个指标直接影响了用户的跳出率，更快的页面响应意味着更多的 PV、更高的参与度，以及更高的转化率。那什么影响 FP 指标呢？其中一个重要的因素是**网络加载速度**。
+在衡量 Web 页面性能的时候有一个重要的指标叫“**FP（First Paint）**”，是**指从页面加载到首次开始绘制的时长**
+。这个指标直接影响了用户的跳出率，更快的页面响应意味着更多的 PV、更高的参与度，以及更高的转化率。那什么影响 FP
+指标呢？其中一个重要的因素是**网络加载速度**。
 
 1. **IP: 把数据包送达目的主机**
 
 数据包在互联网上进行传输, 就要符合**网络协议: IP**标准, 类似于家庭的收获地址, A => B
 
-如果要想把一个数据包从主机 A 发送到 B, 那么在传输之前, 数据包上会附加上主机 B 的 IP 地址信息, 这样主机 A 在传输数据的时候才能正确无误的找到主机 B, 此外还要附加上自己的 IP 信息, 方便主机 B 收到数据后回复信息给主机 A, 这些附加信息会被装进一个叫做 IP 头的数据结构中, IP 头是 IP 数据包开头的信息, 包含 IP 版本, 源 IP 地址, 目标 IP 地址, 生存时间等信息.
+如果要想把一个数据包从主机 A 发送到 B, 那么在传输之前, 数据包上会附加上主机 B 的 IP 地址信息, 这样主机 A
+在传输数据的时候才能正确无误的找到主机 B, 此外还要附加上自己的 IP 信息, 方便主机 B 收到数据后回复信息给主机 A,
+这些附加信息会被装进一个叫做 IP 头的数据结构中, IP 头是 IP 数据包开头的信息, 包含 IP 版本, 源 IP 地址, 目标 IP 地址,
+生存时间等信息.
 
 **当前仅有网络层步骤如下**
 
-- 主机 A 的数据包传递到网络层(IP 层), 网络层再将 IP 头附加到数据包上, 组成新的**IP 数据包**, 并交给其他层做处理, 处理完之后交给物理层将数据包传输给主机 B 的网络层,在这里主机 B 拆开数据包的 IP 头信息, 并将拆开的数据包传递给上层, 最终主机 B 收到来自主机 A 的数据包
+- 主机 A 的数据包传递到网络层(IP 层), 网络层再将 IP 头附加到数据包上, 组成新的**IP 数据包**, 并交给其他层做处理,
+  处理完之后交给物理层将数据包传输给主机 B 的网络层,在这里主机 B 拆开数据包的 IP 头信息, 并将拆开的数据包传递给上层,
+  最终主机 B 收到来自主机 A 的数据包
 
 **UDP: 把数据包送达应用程序**
-IP 只是负责把数据包传送到对方的电脑, 但是对方电脑并不知道把数据给哪个程序, 因此需要基于 IP 之上开发能和应用打交道的协议, 也就是让接收方主机知道数据应该是谁来处理, 最常见的是**用户数据包协议(User Datagram Protolcol)** 简称**UDP**
+IP 只是负责把数据包传送到对方的电脑, 但是对方电脑并不知道把数据给哪个程序, 因此需要基于 IP 之上开发能和应用打交道的协议,
+也就是让接收方主机知道数据应该是谁来处理, 最常见的是**用户数据包协议(User Datagram Protolcol)** 简称**UDP**
 
-UDP 中一个最重要的信息是端口号, 端口号其实就是一个数字, 每个想访问网络的程序都需要绑定一个端口号, 通过端口号 UDP 就能把指定的数据包发送给指定的程序了, 所以**IP 通过 IP 地址信息把数据发送给指定的电脑, UDP 通过端口号把数据包分发给正确的程序进行处理**, 和 IP 头一样, 端口号会被装进 UDP 头里面, UDP 头+IP 数据包组成新的数据包, 那么**UDP/TCP 被称为传输层**
+UDP 中一个最重要的信息是端口号, 端口号其实就是一个数字, 每个想访问网络的程序都需要绑定一个端口号, 通过端口号 UDP
+就能把指定的数据包发送给指定的程序了, 所以**IP 通过 IP 地址信息把数据发送给指定的电脑, UDP
+通过端口号把数据包分发给正确的程序进行处理**, 和 IP 头一样, 端口号会被装进 UDP 头里面, UDP 头+IP 数据包组成新的数据包,
+那么**UDP/TCP 被称为传输层**
 
-UDP 不能保证数据的可靠性, 但是传输速度却非常快, 所以 UDP 会应用在一些关注速度、但不那么严格要求数据完整性的领域，如在线视频、互动游戏等。因此需要用到 TCP, **TCP 是一种面向连接的, 可靠的, 基于字节流的传输层通信协议,TCP 提供重传机制,TCP 引入了数据包排序机制, 保证把乱序的数据包组成了一个完整的文件, TCP 执行的顺序和 UDP 一样, TCP 额外提供了用于排序的序列号, 以便接收端通过序号来重排数据包**
+UDP 不能保证数据的可靠性, 但是传输速度却非常快, 所以 UDP 会应用在一些关注速度、但不那么严格要求数据完整性的领域，如在线视频、互动游戏等。因此需要用到
+TCP, **TCP 是一种面向连接的, 可靠的, 基于字节流的传输层通信协议,TCP 提供重传机制,TCP 引入了数据包排序机制,
+保证把乱序的数据包组成了一个完整的文件, TCP 执行的顺序和 UDP 一样, TCP 额外提供了用于排序的序列号,
+以便接收端通过序号来重排数据包**
 
 :::
 
@@ -871,20 +961,21 @@ UDP 不能保证数据的可靠性, 但是传输速度却非常快, 所以 UDP �
 ::: details 31. 数组去重
 
 ```js
-let arr = [1,1,"1","1",true,true,"true",{},{},"{}",null,null,undefined,undefined]
+let arr = [1, 1, "1", "1", true, true, "true", {}, {}, "{}", null, null, undefined, undefined]
 
 // 方法1
-let uniqueOne = Array.from(new Set(arr)) console.log(uniqueOne)
+let uniqueOne = Array.from(new Set(arr))
+console.log(uniqueOne)
 
 // 方法2
 let uniqueTwo = arr => {
   let map = new Map(); //或者用空对象 let obj = {} 利用对象属性不能重复得特性
   let brr = []
-  arr.forEach( item => {
-      if(!map.has(item)) { //如果是对象得话就判断 !obj[item]
-          map.set(item,true) //如果是对象得话就obj[item] =true 其他一样
-          brr.push(item)
-      }
+  arr.forEach(item => {
+    if (!map.has(item)) { //如果是对象得话就判断 !obj[item]
+      map.set(item, true) //如果是对象得话就obj[item] =true 其他一样
+      brr.push(item)
+    }
   })
   return brr
 }
@@ -894,10 +985,10 @@ console.log(uniqueTwo(arr))
 let uniqueThree = arr => {
   let brr = []
   arr.forEach(item => {
-      // 使用indexOf 返回数组是否包含某个值 没有就返回-1 有就返回下标
-      if(brr.indexOf(item) === -1) brr.push(item)
-      // 或者使用includes 返回数组是否包含某个值 没有就返回false 有就返回true
-      if(!brr.includes(item)) brr.push(item)
+    // 使用indexOf 返回数组是否包含某个值 没有就返回-1 有就返回下标
+    if (brr.indexOf(item) === -1) brr.push(item)
+    // 或者使用includes 返回数组是否包含某个值 没有就返回false 有就返回true
+    if (!brr.includes(item)) brr.push(item)
   })
   return brr
 }
@@ -905,9 +996,9 @@ console.log(uniqueThree(arr))
 
 //方法4
 let uniqueFour = arr => {
-    // 使用 filter 返回符合条件的集合
-  let brr = arr.filter((item,index) => {
-      return arr.indexOf(item) === index
+  // 使用 filter 返回符合条件的集合
+  let brr = arr.filter((item, index) => {
+    return arr.indexOf(item) === index
   })
   return brr
 }
@@ -925,7 +1016,11 @@ console.log(uniqueFour(arr))
 - 可以实现和接口 interface 的继承
 
 ```js
-interface ISon extends IFather {
+interface
+ISon
+extends
+IFather
+{
   sonValue: number;
 }
 ```
@@ -1456,7 +1551,7 @@ console.log('解密', Decrypt(jiaMi));
 
 <end-time time="2022-11-07 20:44" mood="Vue3相关" />
 
-::: details Vue2.0和Vue3.0有什么区别?
+::: details 49. Vue2.0和Vue3.0有什么区别?
 1. 响应式系统的重新配置, 使用**Proxy代理**替换对象Object.defineProperty()属性,使用代理的优势如下    
 
 - 监听的目标是对象本身，不需要像Object.defineProperty那样遍历每个属性，有一定的性能提升  
@@ -1470,7 +1565,7 @@ console.log('解密', Decrypt(jiaMi));
 :::
 
 
-::: details vue3响应式数据的判断？  
+::: details 50. vue3响应式数据的判断？  
 - isRef: 检查一个值是否为一个 ref 对象 
 - isReactive: 检查一个对象是否是由 reactive 创建的响应式代理  
 - isReadonly: 检查一个对象是否是由 readonly 创建的只读代理  
@@ -1480,7 +1575,7 @@ console.log('解密', Decrypt(jiaMi));
 
 ------------------------ 
 
-::: details Vue3 composition api
+::: details 51. Vue3 composition api
 ![Vue3 composition api](https://img-blog.csdnimg.cn/img_convert/8f74725c96df6d4ce5e98c8525ad0a75.gif)
 
 1. watch函数 
@@ -1540,7 +1635,7 @@ const name = toRef(person,'name')
 ---------------------------
 
 
-::: details 组件中的data为什么是一个函数?
+::: details 52. 组件中的data为什么是一个函数?
 - 一个组件被复用多次的话，也就会创建多个实例。本质上，这些实例用的都是同一个构造函数。
 
 - 如果data是对象的话，对象属于引用类型，会影响到所有的实例。所以为了保证组件不同的实例之间data不冲突，data必须是一个函数。
@@ -1548,18 +1643,18 @@ const name = toRef(person,'name')
 :::
 
 
-::: details nextTick的实现原理是什么？
+::: details 53. nextTick的实现原理是什么？
 - 在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后立即使用 nextTick 来获取更新后的 DOM。  
 - nextTick主要使用了宏任务和微任务。  
 - 根据执行环境分别尝试采用Promise、MutationObserver、setImmediate，如果以上都不行则采用setTimeout定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。  
 :::
 
-::: details m.$set() 如何解决对象新增属性不能响应的问题 ？
+::: details 54. m.$set() 如何解决对象新增属性不能响应的问题 ？
 - 如果目标是数组，直接使用数组的 splice 方法触发相应式；
 - 如果目标是对象，会先判读属性是否存在、对象是否是响应式，最终如果要对属性进行响应式处理，则是通过调用 defineReactive 方法进行响应式处理（ defineReactive 方法就是 Vue 在初始化对象时，给对象属性采用 Object.defineProperty 动态添加 getter 和 setter 的功能所调用的方法）
 :::
 
-::: details  虚拟Dom以及key属性的作用
+::: details 55.  虚拟Dom以及key属性的作用
 - 由于在浏览器中操作DOM是很昂贵的。频繁的操作DOM，会产生一定的性能问题。这就是虚拟Dom的产生原因。  
 - Virtual DOM本质就是用一个原生的JS对象去描述一个DOM节点。是对真实DOM的一层抽象。(也就是源码中的VNode类，它定义在src/core/vdom/vnode.js中。) . 
 - 虚拟 DOM 的实现原理主要包括以下 3 部分：
@@ -1569,7 +1664,7 @@ const name = toRef(person,'name')
 - key 是为 Vue 中 vnode 的唯一标记，通过这个 key，我们的 diff 操作可以更准确、更快速，更准确：因为带 key 就不是就地复用了，在 sameNode 函数a.key === b.key对比中可以避免就地复用的情况。所以会更加准确。更快速：利用 key 的唯一性生成 map 对象来获取对应节点，比遍历方式更快 
 :::
 
-::: details 你的接口请求一般放在哪个生命周期中？
+::: details 56. 你的接口请求一般放在哪个生命周期中？
 - 可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。  
 - 但是推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：
 - 能更快获取到服务端数据，减少页面loading 时间；  
@@ -1579,6 +1674,147 @@ const name = toRef(person,'name')
 ---------------
 
 
+
+
+<end-time time="新增时间: 2022-11-21 15:57" />
+
+
+::: details 57. 最大并发数
+
+----------------------
+
+- 给你一个urls数组和最大并发数, 根据urls数组中的接口和最大并发数, 将接口返回的成功或者失败信息依次放入到results中, 并返回 
+
+
+----------------------
+
+```js
+function concurRequest(urls, maxNum) {
+  return new Promise(resolve => {
+    if (urls.length === 0) {
+      resolve([]);
+      return;
+    }
+    const results = [];
+    let index = 0; // 下一个请求的索引
+    let count = 0; // 当前请求完成的数量
+
+    async function request() {
+      if (index === urls.length) {
+        return;
+      }
+      const i = index;
+      const url = urls[index];
+      index++;
+      try {
+        const resp = await fetch(url)
+        results[i] = resp;
+      } catch (err) {
+        results[i] = err;
+      } finally {
+        count++;
+        if (count === urls.length) {
+          resolve(results)
+        }
+        await request()
+      }
+    }
+
+    const times = Math.min(maxNum, urls.length);
+    console.log('times', times)
+    for (let i = 0; i < times; i++) {
+      request()
+    }
+  })
+}
+
+
+const urls = [];
+for (let i = 1; i <= 10; i++) {
+  urls.push(`https://jsonplaceholder.typicode.com/todos/${i}`)
+}
+
+concurRequest(urls, 2).then(res => {
+  console.log(res)
+})
+```
+:::
+
+
+::: details 58. 求从1开始的前n个奇数和
+- 例子: 比如传入的n为1, 返回1, 传入的n为2, 返回1,3的和, 传入n为3, 返回1,3,5的和(9) 
+- 找规律
+
+```js
+
+1. 基础
+
+[//]: # (i -> 0 <==result==> +1 )
+[//]: # (i -> 1 <==result==> +3 )
+[//]: # (i -> 2 <==result==> +5 )
+[//]: # (i -> 3 <==result==> +7 )
+[//]: # (i -> n <==result==> + 2n + 1 )
+
+
+function sum(n) {
+    let result = 0;
+    for(let i = 0; i < n; i++) {
+        result += 2 * i + 1;
+    }
+    return result;
+}
+
+2. 进阶
+
+function sum(n) {
+    return n * n;
+}
+```
+:::
+
+::: details 输出多少?
+```js
+
+- 分析
+分为 ++[[]][+[]]和[+[]]
+
+++[[]][+[]] 为 ++n  => n = [[]][+[]]
+
++[]进行隐式转换 [].valueOf()得到原始类型, 得不到调用toString得到'', +''等于数字0
+[[]][0]等于取数组的第一项 0 左边++[]也就是++0 为1
+
+const result = ++[[]][+[]] + [+[]]  
+console.log(result) // '10'
+```
+
+:::
+
+
+::: details 统计下面字符串中每个自负出现的次数
+```js
+1. 基础版本
+let a = 'abbbdabdsasdajhytttt';
+function strCount(str) {
+    var result = {}
+    for(let i = 0; i < str.length; i++) {
+        if (result[str[i]]) {
+            result[str[i]]++;
+        } else {
+            result[str[i]] = 1;
+        }
+    }
+    return result;
+}
+
+
+2. 进阶版本
+function strCount(str) {
+    return str.split('').reduce((a, b) => (a[b]++ || (a[b] = 1), a), {})
+}
+```
+:::
+
 以上所有内容答案可能存在误区, 请理性查看
 
 ---------------
+
