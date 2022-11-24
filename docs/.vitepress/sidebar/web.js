@@ -148,8 +148,8 @@ export default {
           link: "/web/react相关笔记/",
         },
         {
-          text: "redux一篇搞懂",
-          link: "/web/react相关笔记/redux一篇搞懂",
+          text: ' React进阶入门',
+          link: '/web/react相关笔记/React进阶入门'
         },
         {
           text: "react面试题",

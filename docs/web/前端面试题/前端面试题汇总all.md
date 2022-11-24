@@ -1772,7 +1772,7 @@ function sum(n) {
 ```
 :::
 
-::: details 输出多少?
+::: details 59. 输出多少?
 ```js
 
 - 分析
@@ -1790,7 +1790,7 @@ console.log(result) // '10'
 :::
 
 
-::: details 统计下面字符串中每个自负出现的次数
+::: details 60. 统计下面字符串中每个自负出现的次数
 ```js
 1. 基础版本
 let a = 'abbbdabdsasdajhytttt';
