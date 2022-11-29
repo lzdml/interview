@@ -169,6 +169,17 @@ export default {
       ],
     },
     {
+      text: "Electron入门",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          text: "Electron官网笔记",
+          link: '/web/electron/'
+        }
+      ]
+    },
+    {
       text: "babel入门",
       collapsible: true,
       collapsed: true,

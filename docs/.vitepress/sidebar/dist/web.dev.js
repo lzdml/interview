@@ -6,6 +6,17 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   "/web/": [{
+    text: '数据结构与算法',
+    collapsible: true,
+    collapsed: true,
+    items: [{
+      text: '栈',
+      link: '/web/数据结构与算法/stack'
+    }, {
+      text: '队列',
+      link: '/web/数据结构与算法/queue'
+    }]
+  }, {
     text: "JavaScript教程笔记",
     collapsible: true,
     collapsed: true,
@@ -24,6 +35,9 @@ var _default = {
     }, {
       text: 'js设计模式',
       link: '/web/js设计模式'
+    }, {
+      text: '大文件上传断点续传',
+      link: '/web/大文件上传断点续传'
     }]
   }, {
     text: "浏览器相关",
@@ -105,8 +119,8 @@ var _default = {
       text: "react入门笔记",
       link: "/web/react相关笔记/"
     }, {
-      text: "redux一篇搞懂",
-      link: "/web/react相关笔记/redux一篇搞懂"
+      text: ' React进阶入门',
+      link: '/web/react相关笔记/React进阶入门'
     }, {
       text: "react面试题",
       link: "/web/react相关笔记/面试题"
@@ -118,6 +132,14 @@ var _default = {
     items: [{
       text: "前端面试题汇总",
       link: "/web/前端面试题/前端面试题汇总all"
+    }]
+  }, {
+    text: "Electron入门",
+    collapsible: true,
+    collapsed: true,
+    items: [{
+      text: "Electron官网笔记",
+      link: '/web/electron/'
     }]
   }, {
     text: "babel入门",
@@ -134,6 +156,9 @@ var _default = {
     items: [{
       text: "微信网页授权流程",
       link: "/web/微信环境文档/"
+    }, {
+      text: '微信小程序入坑指南',
+      link: '/web/微信环境文档/微信小程序入坑指南'
     }]
   }, {
     text: "明星项目评价",
