@@ -2,7 +2,8 @@
 layout: home
 
 hero:
-  name: DL博客
+  # name: DL博客
+  name: 全站置灰三天
   text: 用于分享一些前端开发中所用到的知识以及一些案例
   tagline: Js/Node.Js/Python/Php
   actions:
@@ -31,6 +32,9 @@ features:
   :root {
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+  }
+  html, body {
+    filter: grayscale(1);
   }
 </style>
 
