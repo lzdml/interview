@@ -152,9 +152,13 @@ export default {
           link: '/web/react相关笔记/React进阶入门'
         },
         {
-          text: "react面试题",
-          link: "/web/react相关笔记/面试题",
+          text: 'react18新功能',
+          link: '/web/react相关笔记/react18新功能'
         },
+        // {
+        //   text: "react面试题",
+        //   link: "/web/react相关笔记/面试题",
+        // },
       ],
     },
     {
