@@ -1,5 +1,8 @@
 ## 前端入坑面试题大全
 
+【[变量和类型](https://juejin.cn/post/6844903854882947080)】
+【[深浅拷贝](https://segmentfault.com/a/1190000020255831)】
+
 ::: details 1. JS 中的||和&&符号
 
 - 相当于 or, 只要有一个为 true, 就为 true
