@@ -27,7 +27,7 @@ export default {
           link: "/web/",
         },
         {
-          text: "数组结构及小功能",
+          text: "小功能",
           link: "/web/小功能",
         },
         {

@@ -30,7 +30,7 @@ var _default = {
       text: "JavaScript基础",
       link: "/web/"
     }, {
-      text: "数组结构及小功能",
+      text: "小功能",
       link: "/web/小功能"
     }, {
       text: 'js设计模式',
@@ -122,9 +122,13 @@ var _default = {
       text: ' React进阶入门',
       link: '/web/react相关笔记/React进阶入门'
     }, {
-      text: "react面试题",
-      link: "/web/react相关笔记/面试题"
-    }]
+      text: 'react18新功能',
+      link: '/web/react相关笔记/react18新功能'
+    } // {
+    //   text: "react面试题",
+    //   link: "/web/react相关笔记/面试题",
+    // },
+    ]
   }, {
     text: "前端面试题汇总",
     collapsible: true,
