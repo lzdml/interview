@@ -30,8 +30,9 @@ features:
 
 <style>
   :root {
+    font-size: 22px;
     --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ed5a65, #333);
   }
 </style>
 

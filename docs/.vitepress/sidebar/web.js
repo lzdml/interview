@@ -37,6 +37,10 @@ export default {
         {
           text: '大文件上传断点续传',
           link: '/web/大文件上传断点续传'
+        },
+        {
+          text: '更优雅的处理form表单数据',
+          link: '/web/更优雅的处理form表单数据'
         }
       ],
     },
