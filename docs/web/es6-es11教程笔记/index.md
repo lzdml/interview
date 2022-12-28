@@ -930,3 +930,226 @@ console.log(obj.prototype); // 35;
 ```
 
 :::
+
+
+<end-time time="新增时间: 2022-12-28 16:01" />
+
+::: details Promise
+
+-----------------
+
+=> **前言**  
+Promise有六个常用的API，包括Promise.resolve()、Promise.reject()、Promise.all()、Promise.any()、Promise.allSelect()以及Promise.race()。前两个API很简单，这里我就过滤掉了，这篇博客主要是实现后面四个API
+
+-----------------
+
+
+#### **Promise.all()**
+
+![Promise.all](/assets/js/promise-all.png)
+
+### 思路分析  
+对于iterable, 一般不太方便直接处理, 所以使用**Array.from()**将其转换为数组后进行处理. 然后判断数组是否为空, 如果为空, 直接返回Promise.resolve([]), 否则返回一个需要进一步处理的promise  
+显然，我们肯定需要遍历数组并执行每一个promise，但是在外面我们还需要维护一个计数器，每fulfilled一个promise，计数器加1，如果计数器的值等于数组的长度，则将返回的promise执行resolve()。如果有任意一个promise被reject，那么将返回的promise执行reject()。
+
+- 代码实现
+
+```javascript
+function promiseAll(arr) {
+    // 转换为数组
+    const list = Array.from(arr);
+    const n = list.length;
+    // 特殊情形
+    if (n === 0) {
+        return Promise.resolve([]);
+    }
+    return new Promise((resolve, reject) => {
+        const res = new Array(n);
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            Promise.resolve(list[i]).then(r => {
+                res[i] = r;
+                count++;
+                // 全部fulfilled
+                if (count === n) {
+                    resolve(res);
+                }
+            }).catch(e => {
+                // 任意一个reject
+                reject(e);
+            });
+        }
+    })
+}
+
+```
+
+- 代码测试
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+promiseAll([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
+
+promiseAll([])
+promiseAll([1,2,Promise.resolve(3)])
+promiseAll([Promise.resolve(2), 3, Promise.reject(4)]);
+
+```
+
+------------------
+
+
+#### **Promise.allSettled()**
+
+=> **一句话来解释**  
+ Promise.allSettled() 方法是 promise 并发性方法的其中之一。在你有多个不依赖于彼此成功完成的异步任务时，或者你总是想知道每个 promise 的结果时，使用 Promise.allSettled() 。
+
+![Promise.allSettled](/assets/js/promise-allselected.png)
+
+- 代码如下
+```javascript
+function promiseAllSettled(arr) {
+    const list = Array.from(arr);
+    const n = list.length;
+    if (n === 0) {
+        return Promise.resolve([]);
+    }
+    return new Promise((resolve, reject) => {
+        const res = new Array(n);
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            Promise.resolve(list[i]).then(r => {
+                res[i] = {
+                    status: "fulfilled",
+                    value: r
+                };
+                count++;
+                if (count === n) {
+                    resolve(res);
+                }
+            }).catch(e => {
+                res[i] = {
+                    status: "rejected",
+                    reason: e
+                };
+                count++;
+                if (count === n) {
+                    resolve(res);
+                }
+            });
+        }
+    })
+}
+
+```
+
+- 测试代码
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+promiseAllSettled(promises).
+    then((results) => results.forEach((result) => console.log(result)));
+
+```
+
+---------------
+#### **Promise.any()**
+
+=> **一句话来解释** 
+不关心过程, **只要一个成功**的结果, 总是返回数组内一个已经完成状态的promise, 如果可迭代数组内的任意一个 promise 兑现了，那么该方法所返回的 promise 也会切换至兑现状态，哪怕首个敲定的 promise 是被拒的。
+
+![不关心过程, 只要一个成功的结果](/assets/js/promise-any.png)
+
+- 代码如下
+```javascript
+function promiseAny(arr) {
+    const list = Array.from(arr);
+    const n = list.length;
+    if (n === 0) {
+        return Promise.reject(new AggregateError([]));
+    }
+    return new Promise((resolve, reject) => {
+        const res = new Array(n);
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            Promise.resolve(list[i]).then(r => {
+                resolve(r);
+            }).catch(e => {
+                res[i] = e;
+                count++;
+                if (count === n) {
+                    reject(new AggregateError(res));
+                }
+            });
+        }
+    })
+}
+
+```
+
+- 测试代码
+```javascript
+const pErr = new Promise((resolve, reject) => {
+    reject("总是失败");
+});
+
+const pSlow = new Promise((resolve, reject) => {
+    setTimeout(resolve, 500, "最终完成");
+});
+
+const pFast = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, "很快完成");
+});
+
+promiseAny([pErr, pSlow, pFast]).then((value) => {
+    console.log(value);
+})
+
+```
+
+### **Promise.race()**
+```javascript
+function promiseRace(arr) {
+    const list = Array.from(arr);
+    const n = list.length;
+    return new Promise((resolve, reject) => {
+        // 如果n===0，则永远等待
+        for (let i = 0; i < n; i++) {
+            Promise.resolve(list[i]).then(r => {
+                resolve(r);
+            }).catch(e => {
+                reject(e);
+            });
+        }
+    })
+}
+
+```
+
+
+- 测试代码
+```javascript
+const promise1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 500, 'one');
+});
+
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'two');
+});
+
+promiseRace([promise1, promise2]).then((value) => {
+    console.log(value);
+});
+
+```
+
+:::
