@@ -41,6 +41,9 @@ var _default = {
     }, {
       text: '更优雅的处理form表单数据',
       link: '/web/更优雅的处理form表单数据'
+    }, {
+      text: 'js效果',
+      link: '/web/js效果'
     }]
   }, {
     text: "浏览器相关",
