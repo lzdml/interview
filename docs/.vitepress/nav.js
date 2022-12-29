@@ -13,6 +13,10 @@ export function getNavs() {
       link: "/back/",
     },
     {
+      text: '练习场',
+      link: '/practice/js/'
+    },
+    {
       text: "大杂烩",
       items: [
         {
