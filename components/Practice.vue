@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useData, useRouter } from 'vitepress'
+import { useData, useRouter, withBase } from 'vitepress'
 import practiceList from '../docs/.vitepress/sidebar/practice'
 
 const data = useData()
@@ -27,8 +27,9 @@ const router = useRouter()
 const list = practiceList['/practice/']
 
 const goDetail = (v) => {
-  router.go(v.link)
+  router.go(withBase(v.link))
 }
+
 </script>
 
 <style scoped>
