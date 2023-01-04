@@ -112,3 +112,85 @@ function MeasureExample() {
 
 
 --------------------
+
+
+::: details React.lazy
+
+[React.lazy中文文档](https://zh-hans.reactjs.org/docs/code-splitting.html#reactlazy)
+```javascript
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lazy</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .box {
+      width: 300px;
+      box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
+      padding: 10px 15px;
+    }
+    .box h1 {
+      font-size: 20px;
+      margin: 0 0 1rem 0;
+    }
+  </style>
+</head>
+<body>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
+<div id="root"></div>
+<div id="portal"></div>
+
+<script type="text/babel">
+
+const Loading = () => (
+  <div className="load-container">
+    <h4>Loading...</h4>
+  </div>
+)
+
+const Resource = () => (
+  <div className="box">
+    <h1>React Lazy</h1>
+    <p>This component loaded after 4 seconds, using React lazy and Suspense</p>
+  </div>
+)
+
+const Lazy = React.lazy(() => new Promise(resolve => {
+  setTimeout(() => {
+    resolve({
+      default: () => <Resource />
+    })
+  }, 4000)
+}))
+
+const App = () => {
+  return (
+    <React.Suspense fallback={<Loading />}>
+      <Lazy />
+    </React.Suspense>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+</script>
+</body>
+</html>
+
+```
+:::
