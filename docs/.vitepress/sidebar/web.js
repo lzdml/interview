@@ -237,6 +237,7 @@ export default {
         {text: 'yarn', link: '/web/Package-management/yarn'},
         {text: 'pnpm', link: '/web/Package-management/pnpm'},
         {text: 'vscode', link: '/web/Package-management/vscode'},
+        {text: '常用的npm包', link: '/web/Package-management/常用的npm包' }
       ],
     },
   ]

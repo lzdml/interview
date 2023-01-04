@@ -194,6 +194,9 @@ var _default = {
     }, {
       text: 'vscode',
       link: '/web/Package-management/vscode'
+    }, {
+      text: '常用的npm包',
+      link: '/web/Package-management/常用的npm包'
     }]
   }]
 };
