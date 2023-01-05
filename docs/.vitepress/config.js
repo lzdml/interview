@@ -17,7 +17,7 @@ export default defineConfig({
     lineNumbers: true,
   },
   themeConfig: {
-    siteTitle: "DL-Blog",
+    siteTitle: "前端入门指南",
     logo: "/favicon.ico",
     footer: {
       message: "Released under the MIT License.",

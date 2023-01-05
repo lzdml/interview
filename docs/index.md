@@ -2,10 +2,9 @@
 layout: home
 
 hero:
-  name: DL博客
-  # name: 全站置灰三天
-  text: 用于分享一些前端开发中所用到的知识以及一些案例
-  tagline: Js/Node.Js/Python/Php
+  name: 前端入门指南
+  text: 解决前端进阶的难点
+  tagline: 面试, 企业级项目, 源码一网打尽
   actions:
     - theme: brand
       text: Get Started
@@ -29,11 +28,11 @@ features:
 ---
 
 <style>
-  :root {
+  /* :root {
     font-size: 22px;
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ed5a65, #333);
-  }
+  } */
 </style>
 
 <JsTest />
