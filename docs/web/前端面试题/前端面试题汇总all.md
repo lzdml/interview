@@ -1817,6 +1817,60 @@ function strCount(str) {
 ```
 :::
 
+<end-time time="新增时间: 2023-02-06" />
+
+::: details js实现一个forEach
+```javascript
+// call实现
+Array.prototype.forEach1 = function (callback, thisArg) {
+  // 这里的this指的是 [].forEach1前面的数组
+  let len = this.length;
+  for (var i = 0; i < len; i++) {
+    // 修改callback的this指向, 为forEach的第二个参数
+    callback.call(thisArg, this[i], i, this)
+  }
+}
+
+// bind实现
+Array.prototype.forEach2 = function (callback, thisArg) {
+  let len = this.length
+  callback = callback.bind(this)
+  for (let i = 0; i < len; i++) {
+    callback(this[i], i, this)
+  }
+}
+```
+:::
+
+::: details 实现一个快速排序
+// 不需要死记, 记住原理
+```javascript
+let arr = [85, 24, 63, 17, 31, 96, 5]
+
+var quickSort = function(arr) {
+  if (arr.length <= 1) {
+    return arr
+  }
+  var pivotIndex = Math.floor(arr.length / 2);
+  var pivot = arr.splice(pivotIndex, 1)[0];
+  var left = [], right = [];
+  for(var i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+
+  // 结束条件 arr.length === 0
+  return quickSort(left).concat([pivot], quickSort(right))
+};
+```
+:::
+
+<js-test />
+
+
 以上所有内容答案可能存在误区, 请理性查看
 
 ---------------

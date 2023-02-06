@@ -9,6 +9,10 @@ export default {
           text: "promise微任务宏任务",
           link: "/practice/js/promise",
         },
+        {
+          text: "js实现Array.prototype函数",
+          link: "/practice/js/array",
+        },
       ],
     },
     {
