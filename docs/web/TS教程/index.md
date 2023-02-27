@@ -312,3 +312,99 @@ type omitExample = myOmit<Todo, 'title'>
 ```
 
 :::
+
+::: details NonNullable
+NonNullable\<T\>：作用是去掉 T 中的 null 和 undefined。T 为字面量/具体类型的联合类型，如果是对象类型是没有效果的。如下
+
+```js
+// 4.8版本之前
+type NonNullable<T> = T extends null | undefined ? never : T;
+// 4.8版本
+type NonNullable<T> = T & {}
+```
+
+:::
+
+::: details Awaited
+Awaited\<T\>：作用是获取 async/await 函数或 promise 的 then() 方法的返回值的类型。而且自带递归效果，如果是这样嵌套的异步方法，也能拿到最终的返回值类型
+
+```js
+type N1 = Awaited<Promise<string>>
+
+type N2 = Awaited<Promise<Promise<number>>>
+
+// 联合类型, 会出发分发
+type N3 = Awaited<boolean | Promise<number>>
+
+// 源码定义
+type Awaited<T> = T extends null | undefined
+? T
+: T extends object & { then(onfulfilled: infer F): any }
+  ? F extends (value: infer V, ...args: any) => any
+    ? Awaited<V>
+    :never
+  : T
+```
+
+:::
+
+::: details Parameters
+Parameters\<T\>：作用是获取函数所有参数的类型集合，返回的是元组。T 自然就是函数了
+
+```js
+type T1 = Parameters<() => string> // []
+
+type T2 = Parameters<(s: string) => void> // [s: string]
+
+// 泛型参数的函数
+type T3 = Parameters<<T>(arg: T) => T> // [arg: unknown]
+
+// 下面这样传参是会报错的
+type T7 = Parameters<string>;
+type T8 = Parameters<Function>;
+```
+:::
+
+---
+
+::: details 练习题
+
+```js
+// 给定一个多层级的对象, 将所有属性改为可选属性
+type User = {
+    name: string
+    age: number
+    children: {
+        boy: number
+        girl: number
+    }
+}
+
+
+// 思路: 我们都知道 Partial可以改变第一层, 也就等于说是需要使用Partial进行递归遍历
+
+type Partial<T> = { [P in keyof T]?: T[P] }
+
+// 递归Partial
+type DeepOptional<T> = T extends object ? { [P in keyof T]?: DeepOptional<T[P]> } : T
+
+// 递归Required
+type DeepRequired<T> = T extends object ? { [P in keyof T]-?: DeepRequired<T[P]> } : T
+
+// 递归Readonly
+type DeepReadonly<T> = T extends object ? { readonly [P in keyof T]: DeepReadonly<T[P]> } : T
+```
+
+```js
+// 需要把如下类型变成 { name: string }
+type User = {
+    name: string
+    age: null,
+    gender: undefined
+}
+
+// 实现如下
+type objNonNullable<T> = { [P in keyof T as T[P] extends null | undefined ? never : P]: T[P] }
+```
+
+:::
