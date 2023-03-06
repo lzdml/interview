@@ -36,5 +36,16 @@ export default {
         },
       ],
     },
+    {
+      text: "项目中遇到的问题",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          text: "微前端 Why Not Iframe",
+          link: "/computer/all/iframe",
+        },
+      ],
+    },
   ]
 }
