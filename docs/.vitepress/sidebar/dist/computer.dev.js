@@ -38,6 +38,9 @@ var _default = {
     items: [{
       text: "微前端 Why Not Iframe",
       link: "/computer/all/iframe"
+    }, {
+      text: 'encodeURI和encodeURIComponent区别',
+      link: '/computer/all/encodeURI'
     }]
   }]
 };
