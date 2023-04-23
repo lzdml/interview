@@ -28,11 +28,15 @@ features:
 ---
 
 <style>
-  /* :root {
+  :root {
     font-size: 22px;
     --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ed5a65, #333);
-  } */
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #d84940, #d84940);
+  }
+
+  .VPButton.medium.brand, .VPButton.medium.alt {
+    border-radius: 5px;
+  }
 </style>
 
 <JsTest />

@@ -17,12 +17,12 @@ var _default = {
       link: "/messy/shell/shell命令"
     }]
   }, {
-    text: "硬件入门笔记",
+    text: "小米全屋智能解答",
     collapsible: true,
     collapsed: true,
     items: [{
-      text: '常见电阻和测试',
-      link: '/messy/硬件工程入门/'
+      text: "什么是网关及本地中枢网络",
+      link: "/messy/mi/"
     }]
   }]
 };

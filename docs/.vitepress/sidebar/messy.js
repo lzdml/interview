@@ -14,6 +14,17 @@ export default {
           link: "/messy/shell/shell命令",
         },
       ],
-    }
-  ]
-}
+    },
+    {
+      text: "小米全屋智能解答",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          text: "什么是网关及本地中枢网络",
+          link: "/messy/mi/",
+        },
+      ],
+    },
+  ],
+};
