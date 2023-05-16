@@ -1952,7 +1952,7 @@ npm run dev -> package.json -> scripts -> dev -> 执行dev的命令
 
 
 ### **问题二**
-- 既然**vue-cli-service serve** 这条指令不存在操作系统中, 为什么执行**npm run dev**的水货, 也就是相当于执行了**vue-cli-service serve**, 为什么这样他就能成功, 而且不报指令不存在的错误?
+- 既然**vue-cli-service serve** 这条指令不存在操作系统中, 为什么执行**npm run dev**的时候, 也就是相当于执行了**vue-cli-service serve**, 为什么这样他就能成功, 而且不报指令不存在的错误?
 - 答:
   - 在安装依赖的时候, 是通过 **npm install**来执行的, **npm**在安装依赖的时候, 会在 node_modules/.bin/ 目录中创建好 **vue-cli-service**为名的几个可执行文件
 
@@ -1978,4 +1978,3 @@ npm run dev -> package.json -> scripts -> dev -> 执行dev的命令
 以上所有内容答案可能存在误区, 请理性查看
 
 ---------------
-````
