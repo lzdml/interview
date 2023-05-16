@@ -8,10 +8,10 @@ export function getNavs() {
       text: "前端",
       link: "/web/前端面试题/前端面试题汇总all",
     },
-    {
-      text: "后端",
-      link: "/back/",
-    },
+    // {
+    //   text: "后端",
+    //   link: "/back/",
+    // },
     {
       text: '练习场',
       link: '/practice/js/'
