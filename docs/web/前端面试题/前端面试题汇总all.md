@@ -1975,6 +1975,48 @@ npm run dev -> package.json -> scripts -> dev -> 执行dev的命令
 
 :::
 
+
+::: details 对象赋值
+```javascript
+function fn(x, y) {
+    // 继续操作 x y
+}
+const num = 100
+const obj = { name: '双越' }
+fn(num, obj)
+
+// 相当于
+const num = 100
+const obj = { name: '双越' }
+
+let x = num
+let y = obj
+```
+
+
+// 面试题
+```javascript
+function changeArg(x) { x = 200 }
+// 相当于 let x = num; 基本类型深拷贝
+// x = 200, num = 100
+let num = 100
+changeArg(num)
+
+console.log('changeArg num', num)
+
+let obj = { name: '双越' }
+changeArg(obj)
+console.log('changeArg obj', obj)
+
+function changeArgProp(x) {
+    x.name = '张三'
+}
+changeArgProp(obj)
+console.log('changeArgProp obj', obj)
+```
+:::
+
 以上所有内容答案可能存在误区, 请理性查看
 
 ---------------
+````
