@@ -1,12 +1,12 @@
 export default {
   "/web/": [
     {
-      text: '数据结构与算法',
+      text: "数据结构与算法",
       collapsible: true,
       collapsed: true,
       items: [
-        {text: '栈', link: '/web/数据结构与算法/stack'},
-        {text: '队列', link: '/web/数据结构与算法/queue'}
+        { text: "栈", link: "/web/数据结构与算法/stack" },
+        { text: "队列", link: "/web/数据结构与算法/queue" },
       ],
     },
     {
@@ -15,8 +15,8 @@ export default {
       collapsed: true,
       items: [
         {
-          text: '代码仓库在线地址',
-          link: '/web/online'
+          text: "代码仓库在线地址",
+          link: "/web/online",
         },
         {
           text: "flexible原理解析",
@@ -31,21 +31,21 @@ export default {
           link: "/web/小功能",
         },
         {
-          text: 'js设计模式',
-          link: '/web/js设计模式'
+          text: "js设计模式",
+          link: "/web/js设计模式",
         },
         {
-          text: '大文件上传断点续传',
-          link: '/web/大文件上传断点续传'
+          text: "大文件上传断点续传",
+          link: "/web/大文件上传断点续传",
         },
         {
-          text: '更优雅的处理form表单数据',
-          link: '/web/更优雅的处理form表单数据'
+          text: "更优雅的处理form表单数据",
+          link: "/web/更优雅的处理form表单数据",
         },
         {
-          text: 'js效果',
-          link: '/web/js效果'
-        }
+          text: "js效果",
+          link: "/web/js效果",
+        },
       ],
     },
     {
@@ -58,9 +58,9 @@ export default {
           link: "/web/浏览器相关/路由切换",
         },
         {
-          text: '浏览器判断',
-          link: '/web/浏览器相关/'
-        }
+          text: "浏览器判断",
+          link: "/web/浏览器相关/",
+        },
       ],
     },
     {
@@ -99,9 +99,9 @@ export default {
           link: "/web/css/",
         },
         {
-          text: 'css样式问题',
-          link: '/web/css/css样式问题'
-        }
+          text: "css样式问题",
+          link: "/web/css/css样式问题",
+        },
       ],
     },
     {
@@ -141,9 +141,9 @@ export default {
           link: "/web/vue相关笔记/vue3语法",
         },
         {
-          text: '前端开发规范',
-          link: '/web/vue相关笔记/前端开发规范'
-        }
+          text: "前端开发规范",
+          link: "/web/vue相关笔记/前端开发规范",
+        },
       ],
     },
     {
@@ -156,17 +156,17 @@ export default {
           link: "/web/react相关笔记/",
         },
         {
-          text: ' React进阶入门',
-          link: '/web/react相关笔记/React进阶入门'
+          text: " React进阶入门",
+          link: "/web/react相关笔记/React进阶入门",
         },
         {
-          text: 'react18新功能',
-          link: '/web/react相关笔记/react18新功能'
+          text: "react18新功能",
+          link: "/web/react相关笔记/react18新功能",
         },
-        // {
-        //   text: "react面试题",
-        //   link: "/web/react相关笔记/面试题",
-        // },
+        {
+          text: "react面试题",
+          link: "/web/react相关笔记/面试题",
+        },
       ],
     },
     {
@@ -187,9 +187,9 @@ export default {
       items: [
         {
           text: "Electron官网笔记",
-          link: '/web/electron/'
-        }
-      ]
+          link: "/web/electron/",
+        },
+      ],
     },
     {
       text: "babel入门",
@@ -212,9 +212,9 @@ export default {
           link: "/web/微信环境文档/",
         },
         {
-          text: '微信小程序入坑指南',
-          link: '/web/微信环境文档/微信小程序入坑指南'
-        }
+          text: "微信小程序入坑指南",
+          link: "/web/微信环境文档/微信小程序入坑指南",
+        },
       ],
     },
     {
@@ -229,16 +229,16 @@ export default {
       ],
     },
     {
-      text: '包管理',
+      text: "包管理",
       collapsible: true,
       collapsed: true,
       items: [
-        {text: 'npm', link: '/web/Package-management/npm'},
-        {text: 'yarn', link: '/web/Package-management/yarn'},
-        {text: 'pnpm', link: '/web/Package-management/pnpm'},
-        {text: 'vscode', link: '/web/Package-management/vscode'},
-        {text: '常用的npm包', link: '/web/Package-management/常用的npm包' }
+        { text: "npm", link: "/web/Package-management/npm" },
+        { text: "yarn", link: "/web/Package-management/yarn" },
+        { text: "pnpm", link: "/web/Package-management/pnpm" },
+        { text: "vscode", link: "/web/Package-management/vscode" },
+        { text: "常用的npm包", link: "/web/Package-management/常用的npm包" },
       ],
     },
-  ]
-}
+  ],
+};

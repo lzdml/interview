@@ -6,23 +6,23 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   "/web/": [{
-    text: '数据结构与算法',
+    text: "数据结构与算法",
     collapsible: true,
     collapsed: true,
     items: [{
-      text: '栈',
-      link: '/web/数据结构与算法/stack'
+      text: "栈",
+      link: "/web/数据结构与算法/stack"
     }, {
-      text: '队列',
-      link: '/web/数据结构与算法/queue'
+      text: "队列",
+      link: "/web/数据结构与算法/queue"
     }]
   }, {
     text: "JavaScript教程笔记",
     collapsible: true,
     collapsed: true,
     items: [{
-      text: '代码仓库在线地址',
-      link: '/web/online'
+      text: "代码仓库在线地址",
+      link: "/web/online"
     }, {
       text: "flexible原理解析",
       link: "/web/flexible原理解析"
@@ -33,17 +33,17 @@ var _default = {
       text: "小功能",
       link: "/web/小功能"
     }, {
-      text: 'js设计模式',
-      link: '/web/js设计模式'
+      text: "js设计模式",
+      link: "/web/js设计模式"
     }, {
-      text: '大文件上传断点续传',
-      link: '/web/大文件上传断点续传'
+      text: "大文件上传断点续传",
+      link: "/web/大文件上传断点续传"
     }, {
-      text: '更优雅的处理form表单数据',
-      link: '/web/更优雅的处理form表单数据'
+      text: "更优雅的处理form表单数据",
+      link: "/web/更优雅的处理form表单数据"
     }, {
-      text: 'js效果',
-      link: '/web/js效果'
+      text: "js效果",
+      link: "/web/js效果"
     }]
   }, {
     text: "浏览器相关",
@@ -53,8 +53,8 @@ var _default = {
       text: "前端路由模式(hash/history)",
       link: "/web/浏览器相关/路由切换"
     }, {
-      text: '浏览器判断',
-      link: '/web/浏览器相关/'
+      text: "浏览器判断",
+      link: "/web/浏览器相关/"
     }]
   }, {
     text: "webpack入门",
@@ -83,8 +83,8 @@ var _default = {
       text: "css动画过渡相关",
       link: "/web/css/"
     }, {
-      text: 'css样式问题',
-      link: '/web/css/css样式问题'
+      text: "css样式问题",
+      link: "/web/css/css样式问题"
     }]
   }, {
     text: "es6-es11教程笔记",
@@ -114,8 +114,8 @@ var _default = {
       text: "vue3语法",
       link: "/web/vue相关笔记/vue3语法"
     }, {
-      text: '前端开发规范',
-      link: '/web/vue相关笔记/前端开发规范'
+      text: "前端开发规范",
+      link: "/web/vue相关笔记/前端开发规范"
     }]
   }, {
     text: "react相关笔记",
@@ -125,16 +125,15 @@ var _default = {
       text: "react入门笔记",
       link: "/web/react相关笔记/"
     }, {
-      text: ' React进阶入门',
-      link: '/web/react相关笔记/React进阶入门'
+      text: " React进阶入门",
+      link: "/web/react相关笔记/React进阶入门"
     }, {
-      text: 'react18新功能',
-      link: '/web/react相关笔记/react18新功能'
-    } // {
-    //   text: "react面试题",
-    //   link: "/web/react相关笔记/面试题",
-    // },
-    ]
+      text: "react18新功能",
+      link: "/web/react相关笔记/react18新功能"
+    }, {
+      text: "react面试题",
+      link: "/web/react相关笔记/面试题"
+    }]
   }, {
     text: "前端面试题汇总",
     collapsible: true,
@@ -149,7 +148,7 @@ var _default = {
     collapsed: true,
     items: [{
       text: "Electron官网笔记",
-      link: '/web/electron/'
+      link: "/web/electron/"
     }]
   }, {
     text: "babel入门",
@@ -167,8 +166,8 @@ var _default = {
       text: "微信网页授权流程",
       link: "/web/微信环境文档/"
     }, {
-      text: '微信小程序入坑指南',
-      link: '/web/微信环境文档/微信小程序入坑指南'
+      text: "微信小程序入坑指南",
+      link: "/web/微信环境文档/微信小程序入坑指南"
     }]
   }, {
     text: "明星项目评价",
@@ -179,24 +178,24 @@ var _default = {
       link: "/web/明星项目评价/"
     }]
   }, {
-    text: '包管理',
+    text: "包管理",
     collapsible: true,
     collapsed: true,
     items: [{
-      text: 'npm',
-      link: '/web/Package-management/npm'
+      text: "npm",
+      link: "/web/Package-management/npm"
     }, {
-      text: 'yarn',
-      link: '/web/Package-management/yarn'
+      text: "yarn",
+      link: "/web/Package-management/yarn"
     }, {
-      text: 'pnpm',
-      link: '/web/Package-management/pnpm'
+      text: "pnpm",
+      link: "/web/Package-management/pnpm"
     }, {
-      text: 'vscode',
-      link: '/web/Package-management/vscode'
+      text: "vscode",
+      link: "/web/Package-management/vscode"
     }, {
-      text: '常用的npm包',
-      link: '/web/Package-management/常用的npm包'
+      text: "常用的npm包",
+      link: "/web/Package-management/常用的npm包"
     }]
   }]
 };
