@@ -2016,7 +2016,14 @@ console.log('changeArgProp obj', obj)
 ```
 :::
 
+
+:::details offsetHeight scrollHeight clientHeight 区别
+- offsetHeight - (border + padding + content)
+- clientHeight - (padding + content)
+- scrollHeight - (padding + 实际内容的高度)
+- scrollTop scrollLeft - (DOM 内部元素滚动的距离)
+:::
+
 以上所有内容答案可能存在误区, 请理性查看
 
 ---------------
-````
