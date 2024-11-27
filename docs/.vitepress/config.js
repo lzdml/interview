@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import { getNavs } from "./nav";
 import { getSidebar } from './sidebar/index'
 
-const BASE = "/vitepress-template/";
+const BASE = "/interview/";
 
 export default defineConfig({
   lang: "zh-CN",
