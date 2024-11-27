@@ -7,11 +7,11 @@ hero:
   tagline: 面试, 企业级项目, 源码一网打尽
   actions:
     - theme: brand
-      text: Get Started
+      text: 开始
       link: /web/online
-    - theme: alt
-      text: 诗词
-      link: https://du_zhao_lin.gitee.io/amazing-sentences/
+#    - theme: alt
+#      text: 诗词
+#      link: https://du_zhao_lin.gitee.io/amazing-sentences/
 
 features:
   - icon: ⚡️
@@ -35,7 +35,7 @@ features:
   }
 
   .VPButton.medium.brand, .VPButton.medium.alt {
-    border-radius: 5px;
+    border-radius: 100px;
   }
 </style>
 
