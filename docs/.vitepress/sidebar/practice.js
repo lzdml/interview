@@ -20,6 +20,10 @@ export default {
       collapsible: true,
       collapsed: true,
       items: [
+        {
+          text: "box-shadow",
+          link: "/practice/css/shadow",
+        },
       ],
     },
   ]

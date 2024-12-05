@@ -75,7 +75,6 @@
 <script setup>
 	import ImitationBtn from '../../../components/CssDemo/Imitation-btn.vue'
 	import NotComp from '../../../components/CssDemo/notComp.vue'
-  import Avatar from '../../../components/CssDemo/Avatar.vue'
 </script>
 
 ::: details :not
@@ -130,8 +129,4 @@ li:not(:last-of-type) {
 ```
 :::
 
-
-::: details 头像悬浮
-<!-- <Avatar /> -->
-:::
 
